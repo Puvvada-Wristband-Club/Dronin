@@ -21,12 +21,12 @@ r1
 31
 Z9 o-work work -L mtiAvm -L mtiOvm -L mtiUvm -L mtiUPF
 Z10 n@c@o@n@n@e@c@t_testbench_sample
-!i10b 1
 Z11 !s100 <o7XYJ[nWX`AcTiFkhdcc3
-!s85 0
 Z12 !s108 1430706243.964000
 Z13 !s107 connect_parameters.v|C:/Modelsim_projects/Dronin/Verilog/network/NoC_implementation/testbench_sample.v|
 Z14 !s90 -reportprogress|300|-work|work|-vopt|C:/Modelsim_projects/Dronin/Verilog/network/NoC_implementation/testbench_sample.v|
+!i10b 1
+!s85 0
 vglbl
 Z15 IJ4VB[mJ98PE[5b`^5Coa]1
 R3
@@ -342,81 +342,120 @@ Z144 !s107 C:/Modelsim_projects/Dronin/Verilog/network/NoC_implementation/module
 Z145 !s90 -reportprogress|300|-work|work|-vopt|C:/Modelsim_projects/Dronin/Verilog/network/NoC_implementation/module_outport_encoder.v|
 !i10b 1
 !s85 0
-voutput_queue_fifo
-R1
-Z146 InfgLg;44:>hZim9h8Z1lb0
+vnode
+Z146 IWmYi7lEil;51><iBhmP0a0
 R3
 R4
-Z147 w1380377602
-Z148 8C:/Modelsim_projects/Dronin/Verilog/network/NoC_implementation/output_queue_fifo.v
-Z149 FC:/Modelsim_projects/Dronin/Verilog/network/NoC_implementation/output_queue_fifo.v
+Z147 w1430718569
+Z148 8C:\Modelsim_projects\Dronin\Verilog\network\NoC_implementation\node.v
+Z149 FC:\Modelsim_projects\Dronin\Verilog\network\NoC_implementation\node.v
+L0 6
+R8
+r1
+31
+R9
+Z150 !s110 1430718574
+!i10b 1
+Z151 !s100 geDCVglWV<aO7VA2;AcY;2
+!s85 0
+Z152 !s108 1430718574.746000
+Z153 !s107 C:\Modelsim_projects\Dronin\Verilog\network\NoC_implementation\node.v|
+Z154 !s90 -reportprogress|300|-work|work|-vopt|C:\Modelsim_projects\Dronin\Verilog\network\NoC_implementation\node.v|
+voutput_queue_fifo
+R1
+Z155 InfgLg;44:>hZim9h8Z1lb0
+R3
+R4
+Z156 w1380377602
+Z157 8C:/Modelsim_projects/Dronin/Verilog/network/NoC_implementation/output_queue_fifo.v
+Z158 FC:/Modelsim_projects/Dronin/Verilog/network/NoC_implementation/output_queue_fifo.v
 L0 59
 R8
 r1
 31
 R9
-Z150 !s100 =cH<aec`hJ;VJ6W^]o2X`3
-Z151 !s108 1430706243.761000
-Z152 !s107 C:/Modelsim_projects/Dronin/Verilog/network/NoC_implementation/output_queue_fifo.v|
-Z153 !s90 -reportprogress|300|-work|work|-vopt|C:/Modelsim_projects/Dronin/Verilog/network/NoC_implementation/output_queue_fifo.v|
+Z159 !s100 =cH<aec`hJ;VJ6W^]o2X`3
+Z160 !s108 1430706243.761000
+Z161 !s107 C:/Modelsim_projects/Dronin/Verilog/network/NoC_implementation/output_queue_fifo.v|
+Z162 !s90 -reportprogress|300|-work|work|-vopt|C:/Modelsim_projects/Dronin/Verilog/network/NoC_implementation/output_queue_fifo.v|
 !i10b 1
 !s85 0
+vPE
+!s110 1430718578
+!i10b 1
+!s100 S`QP<E2KP?Maz5YN3M@SC2
+ID>Gm<3585U[TZ7=I0;8ZU1
+R3
+R4
+w1430717970
+8C:/Modelsim_projects/Dronin/Verilog/network/NoC_implementation/PE.v
+FC:/Modelsim_projects/Dronin/Verilog/network/NoC_implementation/PE.v
+L0 1
+R8
+r1
+!s85 0
+31
+!s108 1430718578.075000
+!s107 C:/Modelsim_projects/Dronin/Verilog/network/NoC_implementation/PE.v|
+!s90 -reportprogress|300|-work|work|-vopt|C:/Modelsim_projects/Dronin/Verilog/network/NoC_implementation/PE.v|
+R9
+n@p@e
 vRegFile_1port
 R1
-Z154 ImU[HggU[QL>_Kdco;V9hX0
+Z163 ImU[HggU[QL>_Kdco;V9hX0
 R3
 R4
 R41
-Z155 8C:/Modelsim_projects/Dronin/Verilog/network/NoC_implementation/RegFile_1port.v
-Z156 FC:/Modelsim_projects/Dronin/Verilog/network/NoC_implementation/RegFile_1port.v
+Z164 8C:/Modelsim_projects/Dronin/Verilog/network/NoC_implementation/RegFile_1port.v
+Z165 FC:/Modelsim_projects/Dronin/Verilog/network/NoC_implementation/RegFile_1port.v
 L0 45
 R8
 r1
 31
 R9
-Z157 n@reg@file_1port
-Z158 !s100 Y:n@YXna=a@6IAliIRGX50
-Z159 !s108 1430706243.886000
-Z160 !s107 C:/Modelsim_projects/Dronin/Verilog/network/NoC_implementation/RegFile_1port.v|
-Z161 !s90 -reportprogress|300|-work|work|-vopt|C:/Modelsim_projects/Dronin/Verilog/network/NoC_implementation/RegFile_1port.v|
+Z166 n@reg@file_1port
+Z167 !s100 Y:n@YXna=a@6IAliIRGX50
+Z168 !s108 1430706243.886000
+Z169 !s107 C:/Modelsim_projects/Dronin/Verilog/network/NoC_implementation/RegFile_1port.v|
+Z170 !s90 -reportprogress|300|-work|work|-vopt|C:/Modelsim_projects/Dronin/Verilog/network/NoC_implementation/RegFile_1port.v|
 !i10b 1
 !s85 0
 vRegFileLoadSyn
 R1
-Z162 ILzXBh?goTV1DiBZV=5@BY1
+Z171 ILzXBh?goTV1DiBZV=5@BY1
 R3
 R4
 R41
-Z163 8C:/Modelsim_projects/Dronin/Verilog/network/NoC_implementation/RegFileLoadSyn.v
-Z164 FC:/Modelsim_projects/Dronin/Verilog/network/NoC_implementation/RegFileLoadSyn.v
+Z172 8C:/Modelsim_projects/Dronin/Verilog/network/NoC_implementation/RegFileLoadSyn.v
+Z173 FC:/Modelsim_projects/Dronin/Verilog/network/NoC_implementation/RegFileLoadSyn.v
 L0 33
 R8
 r1
 31
 R9
-Z165 n@reg@file@load@syn
-Z166 !s100 XR7HlS>0LTj78G@b9XjnU1
-Z167 !s108 1430706243.917000
-Z168 !s107 C:/Modelsim_projects/Dronin/Verilog/network/NoC_implementation/RegFileLoadSyn.v|
-Z169 !s90 -reportprogress|300|-work|work|-vopt|C:/Modelsim_projects/Dronin/Verilog/network/NoC_implementation/RegFileLoadSyn.v|
+Z174 n@reg@file@load@syn
+Z175 !s100 XR7HlS>0LTj78G@b9XjnU1
+Z176 !s108 1430706243.917000
+Z177 !s107 C:/Modelsim_projects/Dronin/Verilog/network/NoC_implementation/RegFileLoadSyn.v|
+Z178 !s90 -reportprogress|300|-work|work|-vopt|C:/Modelsim_projects/Dronin/Verilog/network/NoC_implementation/RegFileLoadSyn.v|
 !i10b 1
 !s85 0
 vvc_fifo
-!s110 1430706244
-!i10b 1
-!s100 [g3[Wl<doE=D<K`O==0Qn0
-I_62QJg<INlQ]F?T?AooIn1
+Z179 I_62QJg<INlQ]F?T?AooIn1
 R3
 R4
-w1380378182
-8C:/Modelsim_projects/Dronin/Verilog/network/NoC_implementation/vc_fifo.v
-FC:/Modelsim_projects/Dronin/Verilog/network/NoC_implementation/vc_fifo.v
+Z180 w1380378182
+Z181 8C:/Modelsim_projects/Dronin/Verilog/network/NoC_implementation/vc_fifo.v
+Z182 FC:/Modelsim_projects/Dronin/Verilog/network/NoC_implementation/vc_fifo.v
 L0 59
 R8
 r1
-!s85 0
 31
-!s108 1430706244.011000
-!s107 C:/Modelsim_projects/Dronin/Verilog/network/NoC_implementation/vc_fifo.v|
-!s90 -reportprogress|300|-work|work|-vopt|C:/Modelsim_projects/Dronin/Verilog/network/NoC_implementation/vc_fifo.v|
 R9
+Z183 !s110 1430706244
+Z184 !s100 [g3[Wl<doE=D<K`O==0Qn0
+Z185 !s108 1430706244.011000
+Z186 !s107 C:/Modelsim_projects/Dronin/Verilog/network/NoC_implementation/vc_fifo.v|
+Z187 !s90 -reportprogress|300|-work|work|-vopt|C:/Modelsim_projects/Dronin/Verilog/network/NoC_implementation/vc_fifo.v|
+!i10b 1
+!s85 0

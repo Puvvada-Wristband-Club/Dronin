@@ -9,7 +9,7 @@ module node(N_clk, N_rst_n, input_data, output_data,
 
 	input N_clk, N_rst_n, in_credit;
 	input [31:0] input_data;
-	input [7:0] source, destination;
+	input [7:0] source, destination ;
 	input [68:0] flit;				
 	//input [4:0] destination;
 
@@ -21,7 +21,7 @@ module node(N_clk, N_rst_n, input_data, output_data,
 	reg [32:0] test_value_B = 32'b01000000100000000000000000000000;
 	reg [32:0] test_value_C = 32'b00111111100100000000000000000000;
 	reg [32:0] data_to_be_sent;
-	reg [7:0]  N_local_id;
+	reg [7:0] source, destination, N_local_id;
 	reg [5:0] sequence_length, id;
 	reg i_ack, o0_req, data_to_be_sent_valid;
 
