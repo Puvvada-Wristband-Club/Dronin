@@ -1,0 +1,411 @@
+m255
+K4
+z2
+13
+cModel Technology
+dC:\Modelsim_projects
+!i10d 8192
+!i10e 25
+!i10f 100
+vCONNECT_testbench_sample
+Z0 V`JN@9S9cnhjKRR_L]QIcM3
+r1
+!s85 0
+31
+I2QUN`LNAKK<1VYe_5XVkc3
+Z1 dC:\Modelsim_projects\NoC_implementation
+w1430698885
+8C:\Modelsim_projects\NoC_implementation\testbench_sample.v
+FC:\Modelsim_projects\NoC_implementation\testbench_sample.v
+L0 51
+Z2 OL;L;10.2;57
+!s90 -reportprogress|300|-work|work|-vopt|C:\Modelsim_projects\NoC_implementation\testbench_sample.v|
+Z3 o-work work -L mtiAvm -L mtiOvm -L mtiUvm -L mtiUPF
+n@c@o@n@n@e@c@t_testbench_sample
+!i10b 1
+!s100 Bz>?^5d0R4OjTb:daXMO53
+!s108 1430698891.920000
+!s107 connect_parameters.v|C:\Modelsim_projects\NoC_implementation\testbench_sample.v|
+vglbl
+IjQmeOTX@zJf8?W4mEGznA1
+Z4 V`JN@9S9cnhjKRR_L]QIcM3
+R1
+w1290150176
+8C:/Modelsim_projects/NoC_implementation/glbl.v
+FC:/Modelsim_projects/NoC_implementation/glbl.v
+L0 5
+R2
+r1
+31
+R3
+Z5 !s110 1430515237
+!s100 34C[OnK2>F69;Lcf:cOB32
+!s108 1430515237.852000
+!s107 C:/Modelsim_projects/NoC_implementation/glbl.v|
+!s90 -reportprogress|300|-work|work|-vopt|C:/Modelsim_projects/NoC_implementation/glbl.v|
+!i10b 1
+!s85 0
+vinput_queue_fifo
+R5
+IdNiPQ<ZmS7XdDIPz<;Yz^1
+R4
+R1
+w1380377830
+8C:/Modelsim_projects/NoC_implementation/input_queue_fifo.v
+FC:/Modelsim_projects/NoC_implementation/input_queue_fifo.v
+L0 59
+R2
+r1
+31
+R3
+!s100 KFJ_:_]ZJ4J4N64?;ePTf1
+!s108 1430515237.899000
+!s107 C:/Modelsim_projects/NoC_implementation/input_queue_fifo.v|
+!s90 -reportprogress|300|-work|work|-vopt|C:/Modelsim_projects/NoC_implementation/input_queue_fifo.v|
+!i10b 1
+!s85 0
+vm_if_2_router_v3
+IOUojV?k_UzVE[1CKSI^X52
+R4
+R1
+w1382867257
+8C:/Modelsim_projects/NoC_implementation/m_if_2_router_v3.v
+FC:/Modelsim_projects/NoC_implementation/m_if_2_router_v3.v
+L0 16
+R2
+r1
+31
+R3
+Z6 !s110 1430515238
+!s100 RY8k3W1Of1UlWEWUDAAn73
+!s108 1430515238.024000
+!s107 C:/Modelsim_projects/NoC_implementation/m_if_2_router_v3.v|
+!s90 -reportprogress|300|-work|work|-vopt|C:/Modelsim_projects/NoC_implementation/m_if_2_router_v3.v|
+!i10b 1
+!s85 0
+vmkInputArbiter
+I^?hjz42:l8kR2>ilP2[[b1
+R4
+R1
+Z7 w1380963179
+8C:/Modelsim_projects/NoC_implementation/mkInputArbiter.v
+FC:/Modelsim_projects/NoC_implementation/mkInputArbiter.v
+L0 66
+R2
+r1
+31
+R3
+nmk@input@arbiter
+Z8 !s110 1429912309
+!s100 [amg_S]1IE:NL?liX5SIP2
+!s90 -reportprogress|300|-work|work|-vopt|C:/Modelsim_projects/NoC_implementation/mkInputArbiter.v|
+!s108 1429912309.355000
+!s107 C:/Modelsim_projects/NoC_implementation/mkInputArbiter.v|
+!i10b 1
+!s85 0
+vmkInputVCQueues
+R4
+r1
+31
+I?eARa<4[dV=j;leh??ETJ1
+R1
+R7
+8C:/Modelsim_projects/NoC_implementation/mkInputVCQueues.v
+FC:/Modelsim_projects/NoC_implementation/mkInputVCQueues.v
+L0 76
+R2
+R3
+nmk@input@v@c@queues
+!s100 Lim;B>2AIMW7QFV]l?CKh2
+!s90 -reportprogress|300|-work|work|-vopt|C:/Modelsim_projects/NoC_implementation/mkInputVCQueues.v|
+!s108 1429912309.401000
+!s107 C:/Modelsim_projects/NoC_implementation/mkInputVCQueues.v|
+!s85 0
+!i10b 1
+vmkNetwork
+R4
+r1
+31
+I2VN:ofQU@?kbb9TPG3CNY1
+R1
+R7
+8C:/Modelsim_projects/NoC_implementation/mkNetwork.v
+FC:/Modelsim_projects/NoC_implementation/mkNetwork.v
+L0 16154
+R2
+R3
+nmk@network
+!s100 lGNdFA8k`MVEIoYdQ79lz1
+!s90 -reportprogress|300|-work|work|-vopt|C:/Modelsim_projects/NoC_implementation/mkNetwork.v|
+!s108 1429912309.448000
+!s107 C:/Modelsim_projects/NoC_implementation/mkNetwork.v|
+!s85 0
+!i10b 1
+vmkOutPortFIFO
+R4
+r1
+31
+IWIGMYDbJJhm??n9cSC`R`0
+R1
+R7
+8C:/Modelsim_projects/NoC_implementation/mkOutPortFIFO.v
+FC:/Modelsim_projects/NoC_implementation/mkOutPortFIFO.v
+L0 93
+R2
+R3
+nmk@out@port@f@i@f@o
+!s100 ;dD;9Ab^ec:_VKR1ACzi62
+!s90 -reportprogress|300|-work|work|-vopt|C:/Modelsim_projects/NoC_implementation/mkOutPortFIFO.v|
+!s108 1429912309.573000
+!s107 C:/Modelsim_projects/NoC_implementation/mkOutPortFIFO.v|
+!s85 0
+!i10b 1
+vmkOutputArbiter
+R8
+IgB4`G6IC^X0`G8nenTQ?M0
+R4
+R1
+R7
+8C:/Modelsim_projects/NoC_implementation/mkOutputArbiter.v
+FC:/Modelsim_projects/NoC_implementation/mkOutputArbiter.v
+L0 66
+R2
+r1
+31
+R3
+nmk@output@arbiter
+!s100 kgVF:l:QYkN8<[D9N;?do1
+!s90 -reportprogress|300|-work|work|-vopt|C:/Modelsim_projects/NoC_implementation/mkOutputArbiter.v|
+!s108 1429912309.667000
+!s107 C:/Modelsim_projects/NoC_implementation/mkOutputArbiter.v|
+!i10b 1
+!s85 0
+vmkRouterCore
+R4
+r1
+31
+IP8>ii;J5L2YVi3=6ZQ_Rm2
+R1
+R7
+8C:/Modelsim_projects/NoC_implementation/mkRouterCore.v
+FC:/Modelsim_projects/NoC_implementation/mkRouterCore.v
+L0 534
+R2
+R3
+nmk@router@core
+!s100 W7J6z8m6cUoI^i4Q_2:Lj3
+!s90 -reportprogress|300|-work|work|-vopt|C:/Modelsim_projects/NoC_implementation/mkRouterCore.v|
+!s108 1429912309.714000
+!s107 C:/Modelsim_projects/NoC_implementation/mkRouterCore.v|
+!s85 0
+!i10b 1
+vmkRouterInputArbitersRoundRobin
+R8
+ID2Zz=l=NaKLRcdmWbo=lM2
+R4
+R1
+R7
+8C:/Modelsim_projects/NoC_implementation/mkRouterInputArbitersRoundRobin.v
+FC:/Modelsim_projects/NoC_implementation/mkRouterInputArbitersRoundRobin.v
+Z9 L0 194
+R2
+r1
+31
+R3
+nmk@router@input@arbiters@round@robin
+!s100 VaRfd0<IBOo;>JVKc2iEj1
+!s90 -reportprogress|300|-work|work|-vopt|C:/Modelsim_projects/NoC_implementation/mkRouterInputArbitersRoundRobin.v|
+!s108 1429912309.792000
+!s107 C:/Modelsim_projects/NoC_implementation/mkRouterInputArbitersRoundRobin.v|
+!i10b 1
+!s85 0
+vmkRouterInputArbitersStatic
+R4
+r1
+31
+IEN?>GE[I165dQWPaM4@J42
+R1
+R7
+8C:/Modelsim_projects/NoC_implementation/mkRouterInputArbitersStatic.v
+FC:/Modelsim_projects/NoC_implementation/mkRouterInputArbitersStatic.v
+R9
+R2
+R3
+nmk@router@input@arbiters@static
+!s100 T=jobYeJBFJ7fTM6SS_Sf0
+!s90 -reportprogress|300|-work|work|-vopt|C:/Modelsim_projects/NoC_implementation/mkRouterInputArbitersStatic.v|
+!s108 1429912309.870000
+!s107 C:/Modelsim_projects/NoC_implementation/mkRouterInputArbitersStatic.v|
+!s85 0
+!i10b 1
+vmkRouterOutputArbitersRoundRobin
+R8
+I5MUVZm4G^D42eURQ4>O1=0
+R4
+R1
+R7
+8C:/Modelsim_projects/NoC_implementation/mkRouterOutputArbitersRoundRobin.v
+FC:/Modelsim_projects/NoC_implementation/mkRouterOutputArbitersRoundRobin.v
+R9
+R2
+r1
+31
+R3
+nmk@router@output@arbiters@round@robin
+!s100 GEPF3DmF8M1M8m@nQGUFL1
+!s90 -reportprogress|300|-work|work|-vopt|C:/Modelsim_projects/NoC_implementation/mkRouterOutputArbitersRoundRobin.v|
+!s108 1429912309.917000
+!s107 C:/Modelsim_projects/NoC_implementation/mkRouterOutputArbitersRoundRobin.v|
+!i10b 1
+!s85 0
+vmkRouterOutputArbitersStatic
+R4
+r1
+31
+Id9eX_oeWFV]TaBlY<c6=f1
+R1
+R7
+8C:/Modelsim_projects/NoC_implementation/mkRouterOutputArbitersStatic.v
+FC:/Modelsim_projects/NoC_implementation/mkRouterOutputArbitersStatic.v
+R9
+R2
+R3
+nmk@router@output@arbiters@static
+!s100 gaQ95l:13]7SmN:B00UAT0
+!s90 -reportprogress|300|-work|work|-vopt|C:/Modelsim_projects/NoC_implementation/mkRouterOutputArbitersStatic.v|
+!s108 1429912309.964000
+!s107 C:/Modelsim_projects/NoC_implementation/mkRouterOutputArbitersStatic.v|
+!s85 0
+!i10b 1
+vmkSepRouterAllocator
+R4
+r1
+31
+ILhcL4E2dJYMMV?<jKj^=22
+R1
+R7
+8C:/Modelsim_projects/NoC_implementation/mkSepRouterAllocator.v
+FC:/Modelsim_projects/NoC_implementation/mkSepRouterAllocator.v
+L0 67
+R2
+R3
+nmk@sep@router@allocator
+!s100 `fS9JRg^kPPl=0k0J40b>0
+!s90 -reportprogress|300|-work|work|-vopt|C:/Modelsim_projects/NoC_implementation/mkSepRouterAllocator.v|
+!s108 1429912310.011000
+!s107 C:/Modelsim_projects/NoC_implementation/mkSepRouterAllocator.v|
+!s85 0
+!i10b 1
+vmodule_gen_grant_carry
+IeGJl:PDn=cVR_OK[Szcob1
+R4
+R1
+R7
+8C:/Modelsim_projects/NoC_implementation/module_gen_grant_carry.v
+FC:/Modelsim_projects/NoC_implementation/module_gen_grant_carry.v
+L0 60
+R2
+r1
+31
+R3
+!s110 1429912310
+!s100 ?`bCF;;HaYG6MCC[DiLJ33
+!s90 -reportprogress|300|-work|work|-vopt|C:/Modelsim_projects/NoC_implementation/module_gen_grant_carry.v|
+!s108 1429912310.042000
+!s107 C:/Modelsim_projects/NoC_implementation/module_gen_grant_carry.v|
+!i10b 1
+!s85 0
+vmodule_outport_encoder
+R4
+r1
+31
+IMY<ijiNS`Tk?:dUQEeU=G3
+R1
+R7
+8C:/Modelsim_projects/NoC_implementation/module_outport_encoder.v
+FC:/Modelsim_projects/NoC_implementation/module_outport_encoder.v
+L0 58
+R2
+R3
+!s100 m82KoOc[EgcT7[`d<_=eQ3
+!s90 -reportprogress|300|-work|work|-vopt|C:/Modelsim_projects/NoC_implementation/module_outport_encoder.v|
+!s108 1429912310.089000
+!s107 C:/Modelsim_projects/NoC_implementation/module_outport_encoder.v|
+!s85 0
+!i10b 1
+voutput_queue_fifo
+R6
+IXfJ1YI><_OcNaIb7>OC8o0
+R4
+R1
+w1380377602
+8C:/Modelsim_projects/NoC_implementation/output_queue_fifo.v
+FC:/Modelsim_projects/NoC_implementation/output_queue_fifo.v
+L0 59
+R2
+r1
+31
+R3
+!s100 =cH<aec`hJ;VJ6W^]o2X`3
+!s108 1430515238.165000
+!s107 C:/Modelsim_projects/NoC_implementation/output_queue_fifo.v|
+!s90 -reportprogress|300|-work|work|-vopt|C:/Modelsim_projects/NoC_implementation/output_queue_fifo.v|
+!i10b 1
+!s85 0
+vRegFile_1port
+R4
+r1
+31
+IVKjdS3ZJ1<G:Z@Bg13no61
+R1
+R7
+8C:/Modelsim_projects/NoC_implementation/RegFile_1port.v
+FC:/Modelsim_projects/NoC_implementation/RegFile_1port.v
+L0 45
+R2
+R3
+n@reg@file_1port
+!s100 Y:n@YXna=a@6IAliIRGX50
+!s90 -reportprogress|300|-work|work|-vopt|C:/Modelsim_projects/NoC_implementation/RegFile_1port.v|
+!s108 1429912310.136000
+!s107 C:/Modelsim_projects/NoC_implementation/RegFile_1port.v|
+!s85 0
+!i10b 1
+vRegFileLoadSyn
+R4
+r1
+31
+I?8:^>@UG[@8aS8Wez;EEj1
+R1
+R7
+8C:/Modelsim_projects/NoC_implementation/RegFileLoadSyn.v
+FC:/Modelsim_projects/NoC_implementation/RegFileLoadSyn.v
+L0 33
+R2
+R3
+n@reg@file@load@syn
+!s100 XR7HlS>0LTj78G@b9XjnU1
+!s90 -reportprogress|300|-work|work|-vopt|C:/Modelsim_projects/NoC_implementation/RegFileLoadSyn.v|
+!s108 1429912310.183000
+!s107 C:/Modelsim_projects/NoC_implementation/RegFileLoadSyn.v|
+!s85 0
+!i10b 1
+vvc_fifo
+IGI_^4YfEZKoQY9c^z=^B23
+R4
+R1
+w1380378182
+8C:/Modelsim_projects/NoC_implementation/vc_fifo.v
+FC:/Modelsim_projects/NoC_implementation/vc_fifo.v
+L0 59
+R2
+r1
+31
+R3
+!s110 1430515325
+!s100 [g3[Wl<doE=D<K`O==0Qn0
+!s108 1430515325.743000
+!s107 C:/Modelsim_projects/NoC_implementation/vc_fifo.v|
+!s90 -reportprogress|300|-work|work|-vopt|C:/Modelsim_projects/NoC_implementation/vc_fifo.v|
+!i10b 1
+!s85 0
