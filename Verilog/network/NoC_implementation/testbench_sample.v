@@ -77,8 +77,8 @@ module CONNECT_testbench_sample();
   wire [flit_port_width-1:0] flit_out [0:`NUM_USER_RECV_PORTS-1];
 
   reg [31:0] cycle;
-  integer i;
-  integer j;
+  integer i,j;
+  //integer j;
 
   // packet fields
   reg is_valid;
@@ -105,40 +105,37 @@ module CONNECT_testbench_sample();
     #(HalfClkPeriod);
 
      // send a 3-flit packet from send port 2 to receive port 3
-    send_flit[2] = 1'b1;
+    send_flit[0] = 1'b1;
     dest = 7;
     vc = 0;
     data = 'ha;
-    flit_in[2] = {1'b1 /*valid*/, 1'b0 /*tail*/, dest, vc, data};
+    flit_in[0] = {1'b1 /*valid*/, 1'b0 /*tail*/, dest, vc, data};//1+1+5+2
     //send_credit[2] = 1'b1;
-    counter[vc] = counter[vc] - 1'b1;
-    $display("@%3d: Injecting flit %x into send port %0d", cycle, flit_in[2], 2);
+    $display("@%3d: Injecting flit %x into send port %0d", cycle, flit_in[0], 0);
     //$display("port 2 send credit = %1d", send_credit[2]);
     //$display("virtual channel %x is currently %x: ", vc, counter[vc]);
 
     #(ClkPeriod);
     // send 2nd flit of packet
-    send_flit[2] = 1'b1;
+    send_flit[0] = 1'b1;
     data = 'hb;
-    flit_in[2] = {1'b1 /*valid*/, 1'b0 /*tail*/, dest, vc, data};
-    counter[vc] = counter[vc] - 1'b1;
-    $display("@%3d: Injecting flit %x into send port %0d", cycle, flit_in[2], 2);
+    flit_in[0] = {1'b1 /*valid*/, 1'b0 /*tail*/, dest, vc, data};
+    $display("@%3d: Injecting flit %x into send port %0d", cycle, flit_in[0], 0);
 
     #(ClkPeriod);
     // send 3nd flit of packet
-    send_flit[2] = 1'b1;
+    send_flit[20] = 1'b1;
     data = 'hc;
-    flit_in[2] = {1'b1 /*valid*/, 1'b1 /*tail*/, dest, vc, data};
+    flit_in[0] = {1'b1 /*valid*/, 1'b1 /*tail*/, dest, vc, data};
     //send_credit[0] = 1'b1;
-    counter[vc] = counter[vc] - 1'b1;
-    $display("@%3d: Injecting flit %x into send port %0d", cycle, flit_in[2], 2);
+    $display("@%3d: Injecting flit %x into send port %0d", cycle, flit_in[0], 0);
     //$display("port 2 send credit = ", send_credit[2]);
     //$display("virtual channel %x is currently %x: ", vc, counter[vc]);
     
     #(ClkPeriod);
     // stop sending flits
-    send_flit[2] = 1'b0;
-    flit_in[2] = 'b0; // valid bit
+    send_flit[0] = 1'b0;
+    flit_in[0] = 'b0; // valid bit
 
   end
 
@@ -149,7 +146,7 @@ module CONNECT_testbench_sample();
     for(i = 0; i < `NUM_USER_RECV_PORTS; i = i + 1) begin
       if(flit_out[i][flit_port_width-1]) begin // valid flit
 
-        $display("@%3d: Ejecting flit %x at receive port %0d, node %x", cycle, flit_out[i], i, nodes[i]);
+        $display("@%3d: Ejecting flit %x at receive port %0d", cycle, flit_out[i], i);//, nodes[i]);
       end
     end
 
@@ -197,7 +194,17 @@ module CONNECT_testbench_sample();
   
   //Here is the instantialtion of the 25 Nodes. Use a generate block to instantiate 
   //the 25 nodes dynamically
-  generate 
+
+  node Node_0 (.N_clk(Clk), .N_rst_n(Rst_n), .input_flit(flit_out[0]), 
+                          .output_data(flit_in[0]), .output_data_valid(send_flit[0]),
+                          .out_credit(credit_in[0]), .out_credit_valid(send_credit[0]), 
+                          .in_credit(credit_out[0]), .node_number(5'd0));
+
+ /* node Node_1 (.N_clk(Clk), .N_rst_n(Rst_n), .input_flit(flit_out[1]), 
+                          .output_data(flit_in[1]), .output_data_valid(send_flit[1]),
+                          .out_credit(credit_in[1]), .out_credit_valid(send_credit[1]), 
+                          .in_credit(credit_out[1]), .node_number(5'd1));
+ /*generate 
 
     genvar g;
 
@@ -532,8 +539,6 @@ module CONNECT_testbench_sample();
 
      ,.recv_ports_24_putCredits_cr_in(credit_in[24])
      ,.EN_recv_ports_24_putCredits(send_credit[24])
-
-
    );
 
 

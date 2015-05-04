@@ -7,45 +7,48 @@ module node(N_clk, N_rst_n, input_flit, output_data,
 			output_data_valid, out_credit, out_credit_valid, in_credit,
 			node_number);
 
-	input N_clk, N_rst_n, in_credit;
-	input [4:0] node_number;
-	//input [31:0] input_data;
-	//input [7:0] source, destination;
-	input [68:0] input_flit;				
-	//input [4:0] destination;
+	input reg N_clk, N_rst_n;
+	input reg [4:0] node_number;
+	input reg [2:0] in_credit;
+	//input reg [31:0] input_data;
+	//input reg [7:0] source, destination;
+	input reg [72:0] input_flit;				
+	//input reg [4:0] destination;
 
 
-	output [68:0] output_data;
-	output [1:0] out_credit, output_data_valid, out_credit_valid;
+	output reg [72:0] output_data;
+	output reg [2:0] out_credit;
+	output reg out_creit_valid, output_data_valid;
 
-	reg [32:0] test_value_A = 32'b01000000001000000000000000000000; 
-	reg [32:0] test_value_B = 32'b01000000100000000000000000000000;
-	reg [32:0] test_value_C = 32'b00111111100100000000000000000000;
-	reg [32:0] data_to_be_sent, input_data;
+	reg [31:0] test_value_A = 32'b01000000001000000000000000000000; 
+	reg [31:0] test_value_B = 32'b01000000100000000000000000000000;
+	reg [31:0] test_value_C = 32'b00111111100100000000000000000000;
+	reg [63:0] data_to_be_sent;
+	reg [31:0] input_data;
 	reg [7:0]  N_local_id, source, destination;
 	reg [5:0] sequence_length, id, name;
 
 	reg i_ack, o0_req, data_to_be_sent_valid;
 
-	reg in_comm_send_request = 0;
-	reg out_comm_send_ack = 0;
-	reg input_data_valid = 0;
+	reg in_comm_send_request;// = 0;
+	reg out_comm_send_ack;// = 0;
+	reg input_data_valid;// = 0;
 
-	wire [5:0] PE_mult_result;
-	wire [5:0] PE_add_result;
+	wire [31:0] PE_mult_result;
+	wire [31:0] PE_add_result;
 
 	integer i =0;
 
-	/*always @ (posedge N_clk) begin
+	always @ (posedge N_clk) begin
 	  //for(i = 0; i < 25; i = i + 1) begin
 	  name <= node_number;
-		if(input_flit[68]) begin // valid flit
+		if(input_flit[72]) begin // valid flit
 
        	  $display("Ejecting flit %x at receive port", input_flit[31:0]);
         end
       //end
     end
-*/
+
 
 	m_if_2_router_v3 if_router(.clk(N_clk),.rst_n(N_rst_n),
 		//general sending interface for master pe and mig_office
@@ -58,7 +61,7 @@ module node(N_clk, N_rst_n, input_flit, output_data,
 		.o_data_input_valid(data_to_be_sent_valid),
 		//signals Between IF and ROUTER
 		.i_credit(in_credit), .o_credit_valid(out_credit_valid), .o_credit(out_credit),
-		.o_data(output_data), .o_data_valid(output_data_valid), .i_flit(flit),
+		.o_data(output_data), .o_data_valid(output_data_valid), .i_flit(input_flit),//64+5+2+1
 		//Tag
 		.local_id(N_local_id));
 

@@ -43,7 +43,7 @@ local_id
 
 
 parameter           VC=2; // 2 BITS
-parameter           DST=1; // 5 BITS 
+parameter           DST=5; // 5 BITS 
 parameter           FLIT=64;
 parameter           PAD=73-FLIT-DST-VC-2;
 parameter           MSB=FLIT+DST+VC+1;
