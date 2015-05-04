@@ -214,6 +214,20 @@ module CONNECT_testbench_sample();
   
   // Instantiate CONNECT network
   
+  m_if_2_router_v3 if_router(.clk(Clk),.rst_n(Rst_n),
+    //general sending interface for master pe and mig_office
+    //signals between PE and IF
+    .i_comm_send_req(in_comm_send_request), .o_comm_send_ack(out_comm_send_ack), 
+    .i_data_valid(input_data_valid), .i_data(input_data), .i_src(source), 
+    .i_dst(destination), .i_seq_len(sequence_length), .i_id(id),
+    .i_ack_rx(i_ack), .o_req_rx(o_req),
+    .o_data_input(data_to_be_sent),
+    .o_data_input_valid(data_to_be_sent_valid),
+    //signals Between IF and ROUTER
+    .i_credit(in_credit), .o_credit_valid(out_credit_valid), .o_credit(out_credit),
+    .o_data(output_data), .o_data_valid(output_data_valid), .i_flit(flit),
+    //Tag
+    .local_id(N_local_id));
   
   mkNetwork dut
   (.CLK(Clk)
