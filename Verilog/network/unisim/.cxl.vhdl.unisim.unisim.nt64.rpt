@@ -1,0 +1,17 @@
+CxlResult:D:\Xilinx_lib_sim/unisim/.cxl.vhdl.unisim.unisim.nt64.rpt =
+	ExecutionPlatform = nt64 ,
+	SourceLibrary = unisim ,
+	SourcePath = D:/Xilinx/12.4/ISE_DS/ISE/vhdl/src/unisims ,
+	Simulator = mti_se ,
+	SimulatorVersion = 6.5c ,
+	CompiledLibrary = unisim ,
+	CompiledPath = D:\Xilinx_lib_sim/unisim ,
+	Timestamp = Sun Apr 26 12:33:20 2015 ,
+	Time = 1430076800 ,
+	Language = vhdl ,
+	XilinxBuildNumber = M.81d ,
+	XilinxVersion = 12.4 ,
+	LogFile = D:\Xilinx_lib_sim/unisim/.cxl.vhdl.unisim.unisim.nt64.log ,
+	NumOfErrors = 0 ,
+	NumOfWarnings = 0 ,
+

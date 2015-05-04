@@ -106,8 +106,8 @@ module CONNECT_testbench_sample();
 
      // send a 3-flit packet from send port 2 to receive port 3
     send_flit[2] = 1'b1;
-    dest = 3;
-    vc = 1;
+    dest = 7;
+    vc = 0;
     data = 'ha;
     flit_in[2] = {1'b1 /*valid*/, 1'b0 /*tail*/, dest, vc, data};
     //send_credit[2] = 1'b1;
@@ -134,32 +134,12 @@ module CONNECT_testbench_sample();
     $display("@%3d: Injecting flit %x into send port %0d", cycle, flit_in[2], 2);
     //$display("port 2 send credit = ", send_credit[2]);
     //$display("virtual channel %x is currently %x: ", vc, counter[vc]);
-
+    
     #(ClkPeriod);
     // stop sending flits
     send_flit[2] = 1'b0;
     flit_in[2] = 'b0; // valid bit
 
-    #(ClkPeriod);
-     // send a 2-flit packet from send port 0 to receive port 1
-    send_flit[0] = 1'b1;
-    dest = 1;
-    vc = 0;
-    data = 'hd;
-    flit_in[0] = {1'b1 /*valid*/, 1'b0 /*tail*/, dest, vc, data};
-    $display("@%3d: Injecting flit %x into send port %0d", cycle, flit_in[0], 0);
-
-    #(ClkPeriod);
-    // send 2nd flit of packet
-    send_flit[0] = 1'b1;
-    data = 'he;
-    flit_in[0] = {1'b1 /*valid*/, 1'b1 /*tail*/, dest, vc, data};
-    $display("@%3d: Injecting flit %x into send port %0d", cycle, flit_in[0], 0);
-
-    #(ClkPeriod);
-    send_flit[0] = 1'b0;
-    flit_in[0] = 'b0; // valid bit
-    //send_credit[2] = 1'b0;
   end
 
 
@@ -168,7 +148,8 @@ module CONNECT_testbench_sample();
     cycle <= cycle + 1;
     for(i = 0; i < `NUM_USER_RECV_PORTS; i = i + 1) begin
       if(flit_out[i][flit_port_width-1]) begin // valid flit
-        $display("@%3d: Ejecting flit %x at receive port %0d", cycle, flit_out[i], i);
+
+        $display("@%3d: Ejecting flit %x at receive port %0d, node %x", cycle, flit_out[i], i, nodes[i]);
       end
     end
 
@@ -214,6 +195,22 @@ module CONNECT_testbench_sample();
   
   // Instantiate CONNECT network
   
+  //Here is the instantialtion of the 25 Nodes. Use a generate block to instantiate 
+  //the 25 nodes dynamically
+  generate 
+
+    genvar g;
+
+      for(g=0; g<25; g=g+1) begin
+        
+        node Nodes (.N_clk(Clk), .N_rst_n(Rst_n), .input_flit(flit_out[g]), 
+                          .output_data(flit_in[g]), .output_data_valid(send_flit[g]),
+        		              .out_credit(credit_in[g]), .out_credit_valid(send_credit[g]), 
+                          .in_credit(credit_out[g]));//, .node_number(g));
+      end
+
+  endgenerate
+ /* 
   m_if_2_router_v3 if_router(.clk(Clk),.rst_n(Rst_n),
     //general sending interface for master pe and mig_office
     //signals between PE and IF
@@ -227,7 +224,7 @@ module CONNECT_testbench_sample();
     .i_credit(in_credit), .o_credit_valid(out_credit_valid), .o_credit(out_credit),
     .o_data(output_data), .o_data_valid(output_data_valid), .i_flit(flit),
     //Tag
-    .local_id(N_local_id));
+    .local_id(N_local_id));*/
   
   mkNetwork dut
   (.CLK(Clk)
@@ -239,30 +236,30 @@ module CONNECT_testbench_sample();
    ,.EN_send_ports_0_getCredits(1'b1) // drain credits
    ,.send_ports_0_getCredits(credit_out[0])
 
-   ,.send_ports_1_putFlit_flit_in(flit_in[1])
-   ,.EN_send_ports_1_putFlit(send_flit[1])
+     ,.send_ports_1_putFlit_flit_in(flit_in[1])
+     ,.EN_send_ports_1_putFlit(send_flit[1])
 
-   ,.EN_send_ports_1_getCredits(1'b1) // drain credits
-   ,.send_ports_1_getCredits(credit_out[1])
+     ,.EN_send_ports_1_getCredits(1'b1) // drain credits
+     ,.send_ports_1_getCredits(credit_out[1])
 
-   // add rest of send ports here
-   ,.send_ports_2_putFlit_flit_in(flit_in[2])
-   ,.EN_send_ports_2_putFlit(send_flit[2])
-    
-   ,.EN_send_ports_2_getCredits(1'b1) // drain credits
-   ,.send_ports_2_getCredits(credit_out[2])
-   
-   ,.send_ports_3_putFlit_flit_in(flit_in[3])
-	 ,.EN_send_ports_3_putFlit(send_flit[3])
+     // add rest of send ports here
+     ,.send_ports_2_putFlit_flit_in(flit_in[2])
+     ,.EN_send_ports_2_putFlit(send_flit[2])
+      
+     ,.EN_send_ports_2_getCredits(1'b1) // drain credits
+     ,.send_ports_2_getCredits(credit_out[2])
+     
+     ,.send_ports_3_putFlit_flit_in(flit_in[3])
+  	 ,.EN_send_ports_3_putFlit(send_flit[3])
 
-		,.EN_send_ports_3_getCredits(1'b1) // drain credits
-		,.send_ports_3_getCredits(credit_out[3])
+  		,.EN_send_ports_3_getCredits(1'b1) // drain credits
+  		,.send_ports_3_getCredits(credit_out[3])
 
-		,.send_ports_4_putFlit_flit_in(flit_in[4])
-		,.EN_send_ports_4_putFlit(send_flit[4])
+  		,.send_ports_4_putFlit_flit_in(flit_in[4])
+  		,.EN_send_ports_4_putFlit(send_flit[4])
 
-		,.EN_send_ports_4_getCredits(1'b1)
-		,.send_ports_4_getCredits(credit_out[4])
+  		,.EN_send_ports_4_getCredits(1'b1)
+  		,.send_ports_4_getCredits(credit_out[4])
 
 		 ,.send_ports_5_putFlit_flit_in(flit_in[5])
 		 ,.EN_send_ports_5_putFlit(send_flit[5])
@@ -384,158 +381,157 @@ module CONNECT_testbench_sample();
 		 ,.EN_send_ports_24_getCredits(1'b1)
 		 ,.send_ports_24_getCredits(credit_out[24])
    
-   
-  
+
    ,.EN_recv_ports_0_getFlit(1'b1) // drain flits
    ,.recv_ports_0_getFlit(flit_out[0])
 
    ,.recv_ports_0_putCredits_cr_in(credit_in[0])
    ,.EN_recv_ports_0_putCredits(send_credit[0])
 
-   ,.EN_recv_ports_1_getFlit(1'b1) // drain flits
-   ,.recv_ports_1_getFlit(flit_out[1])
+     ,.EN_recv_ports_1_getFlit(1'b1) // drain flits
+     ,.recv_ports_1_getFlit(flit_out[1])
 
-   ,.recv_ports_1_putCredits_cr_in(credit_in[1])
-   ,.EN_recv_ports_1_putCredits(send_credit[1])
+     ,.recv_ports_1_putCredits_cr_in(credit_in[1])
+     ,.EN_recv_ports_1_putCredits(send_credit[1])
 
-   // add rest of receive ports here
-   ,.EN_recv_ports_2_getFlit(1'b1) // drain flits
-   ,.recv_ports_2_getFlit(flit_out[2])
+     // add rest of receive ports here
+     ,.EN_recv_ports_2_getFlit(1'b1) // drain flits
+     ,.recv_ports_2_getFlit(flit_out[2])
 
-   ,.recv_ports_2_putCredits_cr_in(credit_in[2])
-   ,.EN_recv_ports_2_putCredits(send_credit[2])
+     ,.recv_ports_2_putCredits_cr_in(credit_in[2])
+     ,.EN_recv_ports_2_putCredits(send_credit[2])
 
-   ,.EN_recv_ports_3_getFlit(1'b1) // drain flits
-   ,.recv_ports_3_getFlit(flit_out[3])
+     ,.EN_recv_ports_3_getFlit(1'b1) // drain flits
+     ,.recv_ports_3_getFlit(flit_out[3])
 
-   ,.recv_ports_3_putCredits_cr_in(credit_in[3])
-   ,.EN_recv_ports_3_putCredits(send_credit[3])
+     ,.recv_ports_3_putCredits_cr_in(credit_in[3])
+     ,.EN_recv_ports_3_putCredits(send_credit[3])
 
-   ,.EN_recv_ports_4_getFlit(1'b1) // drain flits
-   ,.recv_ports_4_getFlit(flit_out[4])
+     ,.EN_recv_ports_4_getFlit(1'b1) // drain flits
+     ,.recv_ports_4_getFlit(flit_out[4])
 
-   ,.recv_ports_4_putCredits_cr_in(credit_in[4])
-   ,.EN_recv_ports_4_putCredits(send_credit[4])
+     ,.recv_ports_4_putCredits_cr_in(credit_in[4])
+     ,.EN_recv_ports_4_putCredits(send_credit[4])
 
-   ,.EN_recv_ports_5_getFlit(1'b1) // drain flits
-   ,.recv_ports_5_getFlit(flit_out[5])
+     ,.EN_recv_ports_5_getFlit(1'b1) // drain flits
+     ,.recv_ports_5_getFlit(flit_out[5])
 
-   ,.recv_ports_5_putCredits_cr_in(credit_in[5])
-   ,.EN_recv_ports_5_putCredits(send_credit[5])
+     ,.recv_ports_5_putCredits_cr_in(credit_in[5])
+     ,.EN_recv_ports_5_putCredits(send_credit[5])
 
-   ,.EN_recv_ports_6_getFlit(1'b1) // drain flits
-   ,.recv_ports_6_getFlit(flit_out[6])
+     ,.EN_recv_ports_6_getFlit(1'b1) // drain flits
+     ,.recv_ports_6_getFlit(flit_out[6])
 
-   ,.recv_ports_6_putCredits_cr_in(credit_in[6])
-   ,.EN_recv_ports_6_putCredits(send_credit[6])
+     ,.recv_ports_6_putCredits_cr_in(credit_in[6])
+     ,.EN_recv_ports_6_putCredits(send_credit[6])
 
-   ,.EN_recv_ports_7_getFlit(1'b1) // drain flits
-   ,.recv_ports_7_getFlit(flit_out[7])
+     ,.EN_recv_ports_7_getFlit(1'b1) // drain flits
+     ,.recv_ports_7_getFlit(flit_out[7])
 
-   ,.recv_ports_7_putCredits_cr_in(credit_in[7])
-   ,.EN_recv_ports_7_putCredits(send_credit[7])
+     ,.recv_ports_7_putCredits_cr_in(credit_in[7])
+     ,.EN_recv_ports_7_putCredits(send_credit[7])
 
-   ,.EN_recv_ports_8_getFlit(1'b1) // drain flits
-   ,.recv_ports_8_getFlit(flit_out[8])
+     ,.EN_recv_ports_8_getFlit(1'b1) // drain flits
+     ,.recv_ports_8_getFlit(flit_out[8])
 
-   ,.recv_ports_8_putCredits_cr_in(credit_in[8])
-   ,.EN_recv_ports_8_putCredits(send_credit[8])
+     ,.recv_ports_8_putCredits_cr_in(credit_in[8])
+     ,.EN_recv_ports_8_putCredits(send_credit[8])
 
-   ,.EN_recv_ports_9_getFlit(1'b1) // drain flits
-   ,.recv_ports_9_getFlit(flit_out[9])
+     ,.EN_recv_ports_9_getFlit(1'b1) // drain flits
+     ,.recv_ports_9_getFlit(flit_out[9])
 
-   ,.recv_ports_9_putCredits_cr_in(credit_in[9])
-   ,.EN_recv_ports_9_putCredits(send_credit[9])
+     ,.recv_ports_9_putCredits_cr_in(credit_in[9])
+     ,.EN_recv_ports_9_putCredits(send_credit[9])
 
-   ,.EN_recv_ports_10_getFlit(1'b1) // drain flits
-   ,.recv_ports_10_getFlit(flit_out[10])
+     ,.EN_recv_ports_10_getFlit(1'b1) // drain flits
+     ,.recv_ports_10_getFlit(flit_out[10])
 
-   ,.recv_ports_10_putCredits_cr_in(credit_in[10])
-   ,.EN_recv_ports_10_putCredits(send_credit[10])
+     ,.recv_ports_10_putCredits_cr_in(credit_in[10])
+     ,.EN_recv_ports_10_putCredits(send_credit[10])
 
-   ,.EN_recv_ports_11_getFlit(1'b1) // drain flits
-   ,.recv_ports_11_getFlit(flit_out[11])
+     ,.EN_recv_ports_11_getFlit(1'b1) // drain flits
+     ,.recv_ports_11_getFlit(flit_out[11])
 
-   ,.recv_ports_11_putCredits_cr_in(credit_in[11])
-   ,.EN_recv_ports_11_putCredits(send_credit[11])
+     ,.recv_ports_11_putCredits_cr_in(credit_in[11])
+     ,.EN_recv_ports_11_putCredits(send_credit[11])
 
-   ,.EN_recv_ports_12_getFlit(1'b1) // drain flits
-   ,.recv_ports_12_getFlit(flit_out[12])
+     ,.EN_recv_ports_12_getFlit(1'b1) // drain flits
+     ,.recv_ports_12_getFlit(flit_out[12])
 
-   ,.recv_ports_12_putCredits_cr_in(credit_in[12])
-   ,.EN_recv_ports_12_putCredits(send_credit[12])
+     ,.recv_ports_12_putCredits_cr_in(credit_in[12])
+     ,.EN_recv_ports_12_putCredits(send_credit[12])
 
-   ,.EN_recv_ports_13_getFlit(1'b1) // drain flits
-   ,.recv_ports_13_getFlit(flit_out[13])
+     ,.EN_recv_ports_13_getFlit(1'b1) // drain flits
+     ,.recv_ports_13_getFlit(flit_out[13])
 
-   ,.recv_ports_13_putCredits_cr_in(credit_in[13])
-   ,.EN_recv_ports_13_putCredits(send_credit[13])
+     ,.recv_ports_13_putCredits_cr_in(credit_in[13])
+     ,.EN_recv_ports_13_putCredits(send_credit[13])
 
-   ,.EN_recv_ports_14_getFlit(1'b1) // drain flits
-   ,.recv_ports_14_getFlit(flit_out[14])
+     ,.EN_recv_ports_14_getFlit(1'b1) // drain flits
+     ,.recv_ports_14_getFlit(flit_out[14])
 
-   ,.recv_ports_14_putCredits_cr_in(credit_in[14])
-   ,.EN_recv_ports_14_putCredits(send_credit[14])
+     ,.recv_ports_14_putCredits_cr_in(credit_in[14])
+     ,.EN_recv_ports_14_putCredits(send_credit[14])
 
-   ,.EN_recv_ports_15_getFlit(1'b1) // drain flits
-   ,.recv_ports_15_getFlit(flit_out[15])
+     ,.EN_recv_ports_15_getFlit(1'b1) // drain flits
+     ,.recv_ports_15_getFlit(flit_out[15])
 
-   ,.recv_ports_15_putCredits_cr_in(credit_in[15])
-   ,.EN_recv_ports_15_putCredits(send_credit[15])
+     ,.recv_ports_15_putCredits_cr_in(credit_in[15])
+     ,.EN_recv_ports_15_putCredits(send_credit[15])
 
-   ,.EN_recv_ports_16_getFlit(1'b1) // drain flits
-   ,.recv_ports_16_getFlit(flit_out[16])
+     ,.EN_recv_ports_16_getFlit(1'b1) // drain flits
+     ,.recv_ports_16_getFlit(flit_out[16])
 
-   ,.recv_ports_16_putCredits_cr_in(credit_in[16])
-   ,.EN_recv_ports_16_putCredits(send_credit[16])
+     ,.recv_ports_16_putCredits_cr_in(credit_in[16])
+     ,.EN_recv_ports_16_putCredits(send_credit[16])
 
-   ,.EN_recv_ports_17_getFlit(1'b1) // drain flits
-   ,.recv_ports_17_getFlit(flit_out[17])
+     ,.EN_recv_ports_17_getFlit(1'b1) // drain flits
+     ,.recv_ports_17_getFlit(flit_out[17])
 
-   ,.recv_ports_17_putCredits_cr_in(credit_in[17])
-   ,.EN_recv_ports_17_putCredits(send_credit[17])
+     ,.recv_ports_17_putCredits_cr_in(credit_in[17])
+     ,.EN_recv_ports_17_putCredits(send_credit[17])
 
-   ,.EN_recv_ports_18_getFlit(1'b1) // drain flits
-   ,.recv_ports_18_getFlit(flit_out[18])
+     ,.EN_recv_ports_18_getFlit(1'b1) // drain flits
+     ,.recv_ports_18_getFlit(flit_out[18])
 
-   ,.recv_ports_18_putCredits_cr_in(credit_in[18])
-   ,.EN_recv_ports_18_putCredits(send_credit[18])
+     ,.recv_ports_18_putCredits_cr_in(credit_in[18])
+     ,.EN_recv_ports_18_putCredits(send_credit[18])
 
-   ,.EN_recv_ports_19_getFlit(1'b1) // drain flits
-   ,.recv_ports_19_getFlit(flit_out[19])
+     ,.EN_recv_ports_19_getFlit(1'b1) // drain flits
+     ,.recv_ports_19_getFlit(flit_out[19])
 
-   ,.recv_ports_19_putCredits_cr_in(credit_in[19])
-   ,.EN_recv_ports_19_putCredits(send_credit[19])
+     ,.recv_ports_19_putCredits_cr_in(credit_in[19])
+     ,.EN_recv_ports_19_putCredits(send_credit[19])
 
-   ,.EN_recv_ports_20_getFlit(1'b1) // drain flits
-   ,.recv_ports_20_getFlit(flit_out[20])
+     ,.EN_recv_ports_20_getFlit(1'b1) // drain flits
+     ,.recv_ports_20_getFlit(flit_out[20])
 
-   ,.recv_ports_20_putCredits_cr_in(credit_in[20])
-   ,.EN_recv_ports_20_putCredits(send_credit[20])
+     ,.recv_ports_20_putCredits_cr_in(credit_in[20])
+     ,.EN_recv_ports_20_putCredits(send_credit[20])
 
-   ,.EN_recv_ports_21_getFlit(1'b1) // drain flits
-   ,.recv_ports_21_getFlit(flit_out[21])
+     ,.EN_recv_ports_21_getFlit(1'b1) // drain flits
+     ,.recv_ports_21_getFlit(flit_out[21])
 
-   ,.recv_ports_21_putCredits_cr_in(credit_in[21])
-   ,.EN_recv_ports_21_putCredits(send_credit[21])
+     ,.recv_ports_21_putCredits_cr_in(credit_in[21])
+     ,.EN_recv_ports_21_putCredits(send_credit[21])
 
-   ,.EN_recv_ports_22_getFlit(1'b1) // drain flits
-   ,.recv_ports_22_getFlit(flit_out[22])
+     ,.EN_recv_ports_22_getFlit(1'b1) // drain flits
+     ,.recv_ports_22_getFlit(flit_out[22])
 
-   ,.recv_ports_22_putCredits_cr_in(credit_in[22])
-   ,.EN_recv_ports_22_putCredits(send_credit[22])
+     ,.recv_ports_22_putCredits_cr_in(credit_in[22])
+     ,.EN_recv_ports_22_putCredits(send_credit[22])
 
-   ,.EN_recv_ports_23_getFlit(1'b1) // drain flits
-   ,.recv_ports_23_getFlit(flit_out[23])
+     ,.EN_recv_ports_23_getFlit(1'b1) // drain flits
+     ,.recv_ports_23_getFlit(flit_out[23])
 
-   ,.recv_ports_23_putCredits_cr_in(credit_in[23])
-   ,.EN_recv_ports_23_putCredits(send_credit[23])
+     ,.recv_ports_23_putCredits_cr_in(credit_in[23])
+     ,.EN_recv_ports_23_putCredits(send_credit[23])
 
-   ,.EN_recv_ports_24_getFlit(1'b1) // drain flits
-   ,.recv_ports_24_getFlit(flit_out[24])
+     ,.EN_recv_ports_24_getFlit(1'b1) // drain flits
+     ,.recv_ports_24_getFlit(flit_out[24])
 
-   ,.recv_ports_24_putCredits_cr_in(credit_in[24])
-   ,.EN_recv_ports_24_putCredits(send_credit[24])
+     ,.recv_ports_24_putCredits_cr_in(credit_in[24])
+     ,.EN_recv_ports_24_putCredits(send_credit[24])
 
 
    );

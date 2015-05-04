@@ -1,0 +1,68 @@
+Modifying modelsim.ini
+
+Model Technology ModelSim SE vcom 6.5c Compiler 2009.08 Aug 27 2009
+-- Loading package standard
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package vcomponents
+-- Loading package textio
+-- Loading package vital_timing
+-- Loading package vital_primitives
+-- Loading package vpkg
+-- Compiling entity gtxe1
+-- Compiling architecture gtxe1_v of gtxe1
+-- Compiling entity pcie_2_0
+-- Compiling architecture pcie_2_0_v of pcie_2_0
+-- Compiling entity temac_single
+-- Compiling architecture temac_single_v of temac_single
+-- Compiling entity gtp_dual
+-- Compiling architecture gtp_dual_v of gtp_dual
+-- Compiling entity pcie_ep
+-- Compiling architecture pcie_ep_v of pcie_ep
+-- Compiling entity pcie_internal_1_1
+-- Compiling architecture pcie_internal_1_1_v of pcie_internal_1_1
+-- Compiling entity temac
+-- Compiling architecture temac_v of temac
+-- Compiling entity gtpa1_dual
+-- Compiling architecture gtpa1_dual_v of gtpa1_dual
+-- Compiling entity mcb
+-- Compiling architecture mcb_v of mcb
+-- Loading package numeric_std
+-- Compiling entity pcie_a1
+-- Compiling architecture pcie_a1_v of pcie_a1
+-- Compiling entity jtagppc
+-- Compiling architecture jtagppc_v of jtagppc
+-- Compiling entity emac
+-- Loading package standard
+-- Compiling architecture emac_v of emac
+-- Loading package std_logic_1164
+-- Loading package vital_timing
+-- Loading package vcomponents
+-- Loading entity emac
+-- Compiling entity gt11
+-- Compiling architecture gt11_v of gt11
+-- Compiling entity gt11clk
+-- Compiling architecture gt11clk_v of gt11clk
+-- Compiling entity gt11clk_mgt
+-- Compiling architecture gt11clk_mgt_v of gt11clk_mgt
+-- Compiling entity gt11_custom
+-- Compiling architecture gt11_custom_v of gt11_custom
+-- Compiling entity gt11_dual
+-- Compiling architecture gt11_dual_v of gt11_dual
+-- Compiling entity fpga_startup_virtex4
+-- Compiling architecture fpga_startup_virtex4_v of fpga_startup_virtex4
+-- Compiling entity ppc405_adv
+-- Compiling architecture ppc405_adv_v of ppc405_adv
+-- Compiling entity gtx_dual
+-- Compiling architecture gtx_dual_v of gtx_dual
+-- Compiling entity jtagppc440
+-- Compiling architecture jtagppc440_v of jtagppc440
+-- Compiling entity ppc440
+-- Compiling architecture ppc440_v of ppc440
+-- Loading package std_logic_arith
+-- Loading package textio
+-- Loading package vital_primitives
+-- Loading package vpkg
+-- Compiling entity gthe1_quad
+-- Compiling architecture gthe1_quad_v of gthe1_quad
+

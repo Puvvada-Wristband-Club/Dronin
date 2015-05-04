@@ -1,0 +1,72 @@
+Modifying modelsim.ini
+
+Model Technology ModelSim SE vcom 6.5c Compiler 2009.08 Aug 27 2009
+-- Loading package standard
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package vital_timing
+-- Loading package vcomponents
+-- Loading package vital_primitives
+-- Loading package textio
+-- Loading package vpackage
+-- Compiling entity x_gtxe1
+-- Compiling architecture x_gtxe1_v of x_gtxe1
+-- Compiling entity x_pcie_2_0
+-- Compiling architecture x_pcie_2_0_v of x_pcie_2_0
+-- Compiling entity x_temac_single
+-- Compiling architecture x_temac_single_v of x_temac_single
+-- Compiling entity x_gtp_dual
+-- Compiling architecture x_gtp_dual_v of x_gtp_dual
+-- Compiling entity x_pcie_internal_1_1
+-- Loading package standard
+-- Compiling architecture x_pcie_internal_1_1_v of x_pcie_internal_1_1
+-- Loading package std_logic_1164
+-- Loading package vital_timing
+-- Loading package vcomponents
+-- Loading entity x_pcie_internal_1_1
+-- Compiling entity x_temac
+-- Compiling architecture x_temac_v of x_temac
+-- Loading package standard
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package vital_timing
+-- Loading package vcomponents
+-- Loading package vital_primitives
+-- Loading package textio
+-- Loading package vpackage
+-- Compiling entity x_gtpa1_dual
+-- Compiling architecture x_gtpa1_dual_v of x_gtpa1_dual
+-- Compiling entity x_mcb
+-- Compiling architecture x_mcb_v of x_mcb
+-- Loading package numeric_std
+-- Compiling entity x_pcie_a1
+-- Compiling architecture x_pcie_a1_v of x_pcie_a1
+-- Compiling entity x_emac
+-- Compiling architecture x_emac_v of x_emac
+-- Compiling entity x_gt11
+-- Compiling architecture x_gt11_v of x_gt11
+-- Loading package standard
+-- Loading package std_logic_1164
+-- Loading package vital_timing
+-- Compiling entity x_gt11clk
+-- Compiling architecture x_gt11clk_v of x_gt11clk
+-- Compiling entity fpga_startup_virtex4
+-- Compiling architecture fpga_startup_virtex4_v of fpga_startup_virtex4
+-- Loading package vcomponents
+-- Compiling entity x_ppc405_adv
+-- Compiling architecture x_ppc405_adv_v of x_ppc405_adv
+-- Compiling entity x_gtx_dual
+-- Compiling architecture x_gtx_dual_v of x_gtx_dual
+-- Compiling entity x_ppc440
+-- Compiling architecture x_ppc440_v of x_ppc440
+-- Loading package standard
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package vital_timing
+-- Loading package vcomponents
+-- Loading package vital_primitives
+-- Loading package textio
+-- Loading package vpackage
+-- Compiling entity x_gthe1_quad
+-- Compiling architecture x_gthe1_quad_v of x_gthe1_quad
+
