@@ -7,18 +7,19 @@ module node(N_clk, N_rst_n, input_flit, output_data,
 			output_data_valid, out_credit, out_credit_valid, in_credit,
 			node_number);
 
-	input reg N_clk, N_rst_n;
-	input reg [4:0] node_number;
-	input reg [2:0] in_credit;
-	//input reg [31:0] input_data;
-	//input reg [7:0] source, destination;
-	input reg [72:0] input_flit;				
-	//input reg [4:0] destination;
+	input N_clk, N_rst_n;
+	input [4:0] node_number;
+	input [2:0] in_credit;
+	//inout [31:0] input_data;
+	//inout [7:0] source, destination;
+	input [72:0] input_flit;				
+	//inout [4:0] destination;
 
 
-	output reg [72:0] output_data;
-	output reg [2:0] out_credit;
-	output reg out_creit_valid, output_data_valid;
+	input [72:0] output_data;
+	input output_data_valid;
+	input [2:0] out_credit;
+	input out_credit_valid;
 
 	reg [31:0] test_value_A = 32'b01000000001000000000000000000000; 
 	reg [31:0] test_value_B = 32'b01000000100000000000000000000000;
@@ -28,7 +29,7 @@ module node(N_clk, N_rst_n, input_flit, output_data,
 	reg [7:0]  N_local_id, source, destination;
 	reg [5:0] sequence_length, id, name;
 
-	reg i_ack, o0_req, data_to_be_sent_valid;
+	reg i_ack, o_req, data_to_be_sent_valid;
 
 	reg in_comm_send_request;// = 0;
 	reg out_comm_send_ack;// = 0;

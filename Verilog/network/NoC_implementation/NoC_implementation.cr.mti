@@ -249,6 +249,13 @@ Model Technology ModelSim SE-64 vlog 10.2 Compiler 2013.02 Feb  2 2013
 Top level modules:
 	PE
 
+} {} {}} C:/Modelsim_projects/Dronin/Verilog/network/NoC_implementation/node.v {1 {vlog -work work -vopt {C:\Modelsim_projects\Dronin\Verilog\network\NoC_implementation\node.v}
+Model Technology ModelSim SE-64 vlog 10.2 Compiler 2013.02 Feb  2 2013
+-- Compiling module node
+
+Top level modules:
+	node
+
 } {} {}} C:/Modelsim_projects/Dronin/Verilog/network/NoC_implementation/mkRouterOutputArbitersStatic.v {1 {vlog -work work -vopt C:/Modelsim_projects/Dronin/Verilog/network/NoC_implementation/mkRouterOutputArbitersStatic.v
 Model Technology ModelSim SE-64 vlog 10.2 Compiler 2013.02 Feb  2 2013
 -- Compiling module mkRouterOutputArbitersStatic

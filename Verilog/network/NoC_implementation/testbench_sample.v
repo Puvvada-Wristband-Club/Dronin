@@ -195,15 +195,10 @@ module CONNECT_testbench_sample();
   //Here is the instantialtion of the 25 Nodes. Use a generate block to instantiate 
   //the 25 nodes dynamically
 
-  node Node_0 (.N_clk(Clk), .N_rst_n(Rst_n), .input_flit(flit_out[0]), 
-                          .output_data(flit_in[0]), .output_data_valid(send_flit[0]),
-                          .out_credit(credit_in[0]), .out_credit_valid(send_credit[0]), 
-                          .in_credit(credit_out[0]), .node_number(5'd0));
-
- /* node Node_1 (.N_clk(Clk), .N_rst_n(Rst_n), .input_flit(flit_out[1]), 
-                          .output_data(flit_in[1]), .output_data_valid(send_flit[1]),
-                          .out_credit(credit_in[1]), .out_credit_valid(send_credit[1]), 
-                          .in_credit(credit_out[1]), .node_number(5'd1));
+  node_module Node_1(.N_clk(Clk), .N_rst(Rst_n), .Node_i_flit(flit_out[0]),
+              .Node_i_credit(credit_out[0]), .Node_o_credit_valid(send_credit[0]),
+              .Node_o_credit(credit_in[0]), .Node_o_data(flit_in[0]), 
+              .Node_o_data_valid(send_flit[0]));
  /*generate 
 
     genvar g;
