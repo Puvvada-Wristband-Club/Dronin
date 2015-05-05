@@ -1,68 +1,47 @@
 C:/Modelsim_projects/Dronin/Verilog/network/NoC_implementation/testbench_sample.v {1 {vlog -work work -vopt C:/Modelsim_projects/Dronin/Verilog/network/NoC_implementation/testbench_sample.v
-Model Technology ModelSim SE-64 vlog 10.2 Compiler 2013.02 Feb  2 2013
+Model Technology ModelSim SE vlog 10.2 Compiler 2013.02 Feb  2 2013
 -- Compiling module CONNECT_testbench_sample
 
 Top level modules:
 	CONNECT_testbench_sample
 
-} {} {}} C:/Modelsim_projects/Dronin/Verilog/network/NoC_implementation/glbl.v {1 {vlog -work work -vopt C:/Modelsim_projects/Dronin/Verilog/network/NoC_implementation/glbl.v
-Model Technology ModelSim SE-64 vlog 10.2 Compiler 2013.02 Feb  2 2013
--- Compiling module glbl
-
-Top level modules:
-	glbl
-
 } {} {}} C:/Modelsim_projects/Dronin/Verilog/network/NoC_implementation/mkInputVCQueues.v {1 {vlog -work work -vopt C:/Modelsim_projects/Dronin/Verilog/network/NoC_implementation/mkInputVCQueues.v
-Model Technology ModelSim SE-64 vlog 10.2 Compiler 2013.02 Feb  2 2013
+Model Technology ModelSim SE vlog 10.2 Compiler 2013.02 Feb  2 2013
 -- Compiling module mkInputVCQueues
 
 Top level modules:
 	mkInputVCQueues
 
-} {} {}} C:/Modelsim_projects/Dronin/Verilog/lineq_solve/nm_matrix/matrix_construct.v {1 {vlog -work work -vopt C:/Modelsim_projects/Dronin/Verilog/lineq_solve/nm_matrix/matrix_construct.v
-Model Technology ModelSim SE-64 vlog 10.2 Compiler 2013.02 Feb  2 2013
--- Compiling module matrix_construct
+} {} {}} C:/Modelsim_projects/Dronin/Verilog/network/NoC_implementation/glbl.v {1 {vlog -work work -vopt C:/Modelsim_projects/Dronin/Verilog/network/NoC_implementation/glbl.v
+Model Technology ModelSim SE vlog 10.2 Compiler 2013.02 Feb  2 2013
+-- Compiling module glbl
 
 Top level modules:
-	matrix_construct
+	glbl
 
 } {} {}} C:/Modelsim_projects/Dronin/Verilog/network/NoC_implementation/module_gen_grant_carry.v {1 {vlog -work work -vopt C:/Modelsim_projects/Dronin/Verilog/network/NoC_implementation/module_gen_grant_carry.v
-Model Technology ModelSim SE-64 vlog 10.2 Compiler 2013.02 Feb  2 2013
+Model Technology ModelSim SE vlog 10.2 Compiler 2013.02 Feb  2 2013
 -- Compiling module module_gen_grant_carry
 
 Top level modules:
 	module_gen_grant_carry
 
 } {} {}} C:/Modelsim_projects/Dronin/Verilog/network/NoC_implementation/mkOutputArbiter.v {1 {vlog -work work -vopt C:/Modelsim_projects/Dronin/Verilog/network/NoC_implementation/mkOutputArbiter.v
-Model Technology ModelSim SE-64 vlog 10.2 Compiler 2013.02 Feb  2 2013
+Model Technology ModelSim SE vlog 10.2 Compiler 2013.02 Feb  2 2013
 -- Compiling module mkOutputArbiter
 
 Top level modules:
 	mkOutputArbiter
 
-} {} {}} C:/Modelsim_projects/Dronin/Verilog/lineq_solve/nm_matrix/matrix_make.v {1 {vlog -work work -vopt C:/Modelsim_projects/Dronin/Verilog/lineq_solve/nm_matrix/matrix_make.v
-Model Technology ModelSim SE-64 vlog 10.2 Compiler 2013.02 Feb  2 2013
--- Compiling module matrix_make
+} {} {}} C:/Modelsim_projects/Dronin/Verilog/network/NoC_implementation/RegFile_1port.v {1 {vlog -work work -vopt C:/Modelsim_projects/Dronin/Verilog/network/NoC_implementation/RegFile_1port.v
+Model Technology ModelSim SE vlog 10.2 Compiler 2013.02 Feb  2 2013
+-- Compiling module RegFile_1port
 
 Top level modules:
-	matrix_make
-
-} {} {}} C:/Modelsim_projects/Dronin/Verilog/network/NoC_implementation/loading_tb.v {1 {vlog -work work -vopt C:/Modelsim_projects/Dronin/Verilog/network/NoC_implementation/loading_tb.v
-Model Technology ModelSim SE-64 vlog 10.2 Compiler 2013.02 Feb  2 2013
--- Compiling module loading_tb
-
-Top level modules:
-	loading_tb
-
-} {} {}} C:/Modelsim_projects/Dronin/Verilog/network/NoC_implementation/node_module.v {1 {vlog -work work -vopt C:/Modelsim_projects/Dronin/Verilog/network/NoC_implementation/node_module.v
-Model Technology ModelSim SE-64 vlog 10.2 Compiler 2013.02 Feb  2 2013
--- Compiling module node_module
-
-Top level modules:
-	node_module
+	RegFile_1port
 
 } {} {}} C:/Modelsim_projects/Dronin/Verilog/network/NoC_implementation/subsplat14.v {1 {vlog -work work -vopt C:/Modelsim_projects/Dronin/Verilog/network/NoC_implementation/subsplat14.v
-Model Technology ModelSim SE-64 vlog 10.2 Compiler 2013.02 Feb  2 2013
+Model Technology ModelSim SE vlog 10.2 Compiler 2013.02 Feb  2 2013
 -- Compiling module subsplat14_altbarrel_shift_s4e
 -- Compiling module subsplat14_altbarrel_shift_38g
 -- Compiling module subsplat14_altpriority_encoder_nh8
@@ -89,43 +68,29 @@ Model Technology ModelSim SE-64 vlog 10.2 Compiler 2013.02 Feb  2 2013
 Top level modules:
 	subsplat14
 
-} {} {}} C:/Modelsim_projects/Dronin/Verilog/network/NoC_implementation/RegFile_1port.v {1 {vlog -work work -vopt C:/Modelsim_projects/Dronin/Verilog/network/NoC_implementation/RegFile_1port.v
-Model Technology ModelSim SE-64 vlog 10.2 Compiler 2013.02 Feb  2 2013
--- Compiling module RegFile_1port
-
-Top level modules:
-	RegFile_1port
-
 } {} {}} C:/Modelsim_projects/Dronin/Verilog/network/NoC_implementation/vc_fifo.v {1 {vlog -work work -vopt C:/Modelsim_projects/Dronin/Verilog/network/NoC_implementation/vc_fifo.v
-Model Technology ModelSim SE-64 vlog 10.2 Compiler 2013.02 Feb  2 2013
+Model Technology ModelSim SE vlog 10.2 Compiler 2013.02 Feb  2 2013
 -- Compiling module vc_fifo
 
 Top level modules:
 	vc_fifo
 
 } {} {}} C:/Modelsim_projects/Dronin/Verilog/network/NoC_implementation/m_if_2_router_v3.v {1 {vlog -work work -vopt C:/Modelsim_projects/Dronin/Verilog/network/NoC_implementation/m_if_2_router_v3.v
-Model Technology ModelSim SE-64 vlog 10.2 Compiler 2013.02 Feb  2 2013
+Model Technology ModelSim SE vlog 10.2 Compiler 2013.02 Feb  2 2013
 -- Compiling module m_if_2_router_v3
 
 Top level modules:
 	m_if_2_router_v3
 
-} {} {}} C:/Modelsim_projects/Dronin/Verilog/lineq_solve/nm_matrix/mn_matrix_tb.v {1 {vlog -work work -vopt C:/Modelsim_projects/Dronin/Verilog/lineq_solve/nm_matrix/mn_matrix_tb.v
-Model Technology ModelSim SE-64 vlog 10.2 Compiler 2013.02 Feb  2 2013
--- Compiling module mn_matrix_tb
-
-Top level modules:
-	mn_matrix_tb
-
 } {} {}} C:/Modelsim_projects/Dronin/Verilog/network/NoC_implementation/mkRouterInputArbitersStatic.v {1 {vlog -work work -vopt C:/Modelsim_projects/Dronin/Verilog/network/NoC_implementation/mkRouterInputArbitersStatic.v
-Model Technology ModelSim SE-64 vlog 10.2 Compiler 2013.02 Feb  2 2013
+Model Technology ModelSim SE vlog 10.2 Compiler 2013.02 Feb  2 2013
 -- Compiling module mkRouterInputArbitersStatic
 
 Top level modules:
 	mkRouterInputArbitersStatic
 
 } {} {}} C:/Modelsim_projects/Dronin/Verilog/network/NoC_implementation/divsp.v {1 {vlog -work work -vopt C:/Modelsim_projects/Dronin/Verilog/network/NoC_implementation/divsp.v
-Model Technology ModelSim SE-64 vlog 10.2 Compiler 2013.02 Feb  2 2013
+Model Technology ModelSim SE vlog 10.2 Compiler 2013.02 Feb  2 2013
 -- Compiling module divsp_altfp_div_csa_gvc
 -- Compiling module divsp_altfp_div_csa_jub
 -- Compiling module divsp_altfp_div_csa_vse
@@ -144,97 +109,83 @@ Top level modules:
 	divsp
 
 } {} {}} C:/Modelsim_projects/Dronin/Verilog/network/NoC_implementation/LICENSE {1 {vlog -work work -vopt C:/Modelsim_projects/Dronin/Verilog/network/NoC_implementation/LICENSE
-Model Technology ModelSim SE-64 vlog 10.2 Compiler 2013.02 Feb  2 2013
-
-} {} {}} C:/Modelsim_projects/Dronin/Verilog/lineq_solve/nm_matrix/matrix_make_tb.v {1 {vlog -work work -vopt C:/Modelsim_projects/Dronin/Verilog/lineq_solve/nm_matrix/matrix_make_tb.v
-Model Technology ModelSim SE-64 vlog 10.2 Compiler 2013.02 Feb  2 2013
--- Compiling module matrix_make_tb
-
-Top level modules:
-	matrix_make_tb
-
-} {} {}} C:/Modelsim_projects/Dronin/Verilog/lineq_solve/nm_matrix/mn_matrix.v {1 {vlog -work work -vopt C:/Modelsim_projects/Dronin/Verilog/lineq_solve/nm_matrix/mn_matrix.v
-Model Technology ModelSim SE-64 vlog 10.2 Compiler 2013.02 Feb  2 2013
--- Compiling module mn_matrix
-
-Top level modules:
-	mn_matrix
-
-} {} {}} C:/Modelsim_projects/Dronin/Verilog/network/NoC_implementation/output_queue_fifo.v {1 {vlog -work work -vopt C:/Modelsim_projects/Dronin/Verilog/network/NoC_implementation/output_queue_fifo.v
-Model Technology ModelSim SE-64 vlog 10.2 Compiler 2013.02 Feb  2 2013
--- Compiling module output_queue_fifo
-
-Top level modules:
-	output_queue_fifo
+Model Technology ModelSim SE vlog 10.2 Compiler 2013.02 Feb  2 2013
 
 } {} {}} C:/Modelsim_projects/Dronin/Verilog/network/NoC_implementation/RegFileLoadSyn.v {1 {vlog -work work -vopt C:/Modelsim_projects/Dronin/Verilog/network/NoC_implementation/RegFileLoadSyn.v
-Model Technology ModelSim SE-64 vlog 10.2 Compiler 2013.02 Feb  2 2013
+Model Technology ModelSim SE vlog 10.2 Compiler 2013.02 Feb  2 2013
 -- Compiling module RegFileLoadSyn
 
 Top level modules:
 	RegFileLoadSyn
 
+} {} {}} C:/Modelsim_projects/Dronin/Verilog/network/NoC_implementation/output_queue_fifo.v {1 {vlog -work work -vopt C:/Modelsim_projects/Dronin/Verilog/network/NoC_implementation/output_queue_fifo.v
+Model Technology ModelSim SE vlog 10.2 Compiler 2013.02 Feb  2 2013
+-- Compiling module output_queue_fifo
+
+Top level modules:
+	output_queue_fifo
+
 } {} {}} C:/Modelsim_projects/Dronin/Verilog/network/NoC_implementation/mkRouterOutputArbitersRoundRobin.v {1 {vlog -work work -vopt C:/Modelsim_projects/Dronin/Verilog/network/NoC_implementation/mkRouterOutputArbitersRoundRobin.v
-Model Technology ModelSim SE-64 vlog 10.2 Compiler 2013.02 Feb  2 2013
+Model Technology ModelSim SE vlog 10.2 Compiler 2013.02 Feb  2 2013
 -- Compiling module mkRouterOutputArbitersRoundRobin
 
 Top level modules:
 	mkRouterOutputArbitersRoundRobin
 
 } {} {}} C:/Modelsim_projects/Dronin/Verilog/network/NoC_implementation/module_outport_encoder.v {1 {vlog -work work -vopt C:/Modelsim_projects/Dronin/Verilog/network/NoC_implementation/module_outport_encoder.v
-Model Technology ModelSim SE-64 vlog 10.2 Compiler 2013.02 Feb  2 2013
+Model Technology ModelSim SE vlog 10.2 Compiler 2013.02 Feb  2 2013
 -- Compiling module module_outport_encoder
 
 Top level modules:
 	module_outport_encoder
 
-} {} {}} C:/Modelsim_projects/Dronin/Verilog/network/NoC_implementation/mkInputArbiter.v {1 {vlog -work work -vopt C:/Modelsim_projects/Dronin/Verilog/network/NoC_implementation/mkInputArbiter.v
-Model Technology ModelSim SE-64 vlog 10.2 Compiler 2013.02 Feb  2 2013
--- Compiling module mkInputArbiter
-
-Top level modules:
-	mkInputArbiter
-
 } {} {}} C:/Modelsim_projects/Dronin/Verilog/network/NoC_implementation/mkOutPortFIFO.v {1 {vlog -work work -vopt C:/Modelsim_projects/Dronin/Verilog/network/NoC_implementation/mkOutPortFIFO.v
-Model Technology ModelSim SE-64 vlog 10.2 Compiler 2013.02 Feb  2 2013
+Model Technology ModelSim SE vlog 10.2 Compiler 2013.02 Feb  2 2013
 -- Compiling module mkOutPortFIFO
 
 Top level modules:
 	mkOutPortFIFO
 
+} {} {}} C:/Modelsim_projects/Dronin/Verilog/network/NoC_implementation/mkInputArbiter.v {1 {vlog -work work -vopt C:/Modelsim_projects/Dronin/Verilog/network/NoC_implementation/mkInputArbiter.v
+Model Technology ModelSim SE vlog 10.2 Compiler 2013.02 Feb  2 2013
+-- Compiling module mkInputArbiter
+
+Top level modules:
+	mkInputArbiter
+
 } {} {}} C:/Modelsim_projects/Dronin/Verilog/network/NoC_implementation/mkSepRouterAllocator.v {1 {vlog -work work -vopt C:/Modelsim_projects/Dronin/Verilog/network/NoC_implementation/mkSepRouterAllocator.v
-Model Technology ModelSim SE-64 vlog 10.2 Compiler 2013.02 Feb  2 2013
+Model Technology ModelSim SE vlog 10.2 Compiler 2013.02 Feb  2 2013
 -- Compiling module mkSepRouterAllocator
 
 Top level modules:
 	mkSepRouterAllocator
 
-} {} {}} C:/Modelsim_projects/Dronin/Verilog/network/NoC_implementation/mkNetwork.v {1 {vlog -work work -vopt C:/Modelsim_projects/Dronin/Verilog/network/NoC_implementation/mkNetwork.v
-Model Technology ModelSim SE-64 vlog 10.2 Compiler 2013.02 Feb  2 2013
--- Compiling module mkNetwork
-
-Top level modules:
-	mkNetwork
-
 } {} {}} C:/Modelsim_projects/Dronin/Verilog/network/NoC_implementation/mkRouterCore.v {1 {vlog -work work -vopt C:/Modelsim_projects/Dronin/Verilog/network/NoC_implementation/mkRouterCore.v
-Model Technology ModelSim SE-64 vlog 10.2 Compiler 2013.02 Feb  2 2013
+Model Technology ModelSim SE vlog 10.2 Compiler 2013.02 Feb  2 2013
 -- Compiling module mkRouterCore
 
 Top level modules:
 	mkRouterCore
 
+} {} {}} C:/Modelsim_projects/Dronin/Verilog/network/NoC_implementation/mkNetwork.v {1 {vlog -work work -vopt C:/Modelsim_projects/Dronin/Verilog/network/NoC_implementation/mkNetwork.v
+Model Technology ModelSim SE vlog 10.2 Compiler 2013.02 Feb  2 2013
+-- Compiling module mkNetwork
+
+Top level modules:
+	mkNetwork
+
 } {} {}} C:/Modelsim_projects/Dronin/Verilog/network/NoC_implementation/PE.v {1 {vlog -work work -vopt C:/Modelsim_projects/Dronin/Verilog/network/NoC_implementation/PE.v
-Model Technology ModelSim SE-64 vlog 10.2 Compiler 2013.02 Feb  2 2013
+Model Technology ModelSim SE vlog 10.2 Compiler 2013.02 Feb  2 2013
 -- Compiling module PE
 
 Top level modules:
 	PE
 
 } {} {}} C:/Modelsim_projects/Dronin/Verilog/network/NoC_implementation/connect_parameters.v {1 {vlog -work work -vopt C:/Modelsim_projects/Dronin/Verilog/network/NoC_implementation/connect_parameters.v
-Model Technology ModelSim SE-64 vlog 10.2 Compiler 2013.02 Feb  2 2013
+Model Technology ModelSim SE vlog 10.2 Compiler 2013.02 Feb  2 2013
 
 } {} {}} C:/Modelsim_projects/Dronin/Verilog/network/NoC_implementation/220model.v {1 {vlog -work work -vopt C:/Modelsim_projects/Dronin/Verilog/network/NoC_implementation/220model.v
-Model Technology ModelSim SE-64 vlog 10.2 Compiler 2013.02 Feb  2 2013
+Model Technology ModelSim SE vlog 10.2 Compiler 2013.02 Feb  2 2013
 -- Compiling module LPM_MEMORY_INITIALIZATION
 -- Compiling module LPM_HINT_EVALUATION
 -- Compiling module LPM_DEVICE_FAMILIES
@@ -299,42 +250,28 @@ Top level modules:
 	lpm_bipad
 
 } {} {}} C:/Modelsim_projects/Dronin/Verilog/network/NoC_implementation/mkRouterOutputArbitersStatic.v {1 {vlog -work work -vopt C:/Modelsim_projects/Dronin/Verilog/network/NoC_implementation/mkRouterOutputArbitersStatic.v
-Model Technology ModelSim SE-64 vlog 10.2 Compiler 2013.02 Feb  2 2013
+Model Technology ModelSim SE vlog 10.2 Compiler 2013.02 Feb  2 2013
 -- Compiling module mkRouterOutputArbitersStatic
 
 Top level modules:
 	mkRouterOutputArbitersStatic
 
-} {} {}} C:/Modelsim_projects/Dronin/Verilog/network/NoC_implementation/node.v {1 {vlog -work work -vopt C:/Modelsim_projects/Dronin/Verilog/network/NoC_implementation/node.v
-Model Technology ModelSim SE-64 vlog 10.2 Compiler 2013.02 Feb  2 2013
--- Compiling module node
-
-Top level modules:
-	node
-
-} {} {}} C:/Modelsim_projects/Dronin/Verilog/lineq_solve/nm_matrix/matrix_construct_tb.v {1 {vlog -work work -vopt C:/Modelsim_projects/Dronin/Verilog/lineq_solve/nm_matrix/matrix_construct_tb.v
-Model Technology ModelSim SE-64 vlog 10.2 Compiler 2013.02 Feb  2 2013
--- Compiling module matrix_construct_tb
-
-Top level modules:
-	matrix_construct_tb
-
-} {} {}} C:/Modelsim_projects/Dronin/Verilog/network/NoC_implementation/input_queue_fifo.v {1 {vlog -work work -vopt C:/Modelsim_projects/Dronin/Verilog/network/NoC_implementation/input_queue_fifo.v
-Model Technology ModelSim SE-64 vlog 10.2 Compiler 2013.02 Feb  2 2013
--- Compiling module input_queue_fifo
-
-Top level modules:
-	input_queue_fifo
-
 } {} {}} C:/Modelsim_projects/Dronin/Verilog/network/NoC_implementation/mkRouterInputArbitersRoundRobin.v {1 {vlog -work work -vopt C:/Modelsim_projects/Dronin/Verilog/network/NoC_implementation/mkRouterInputArbitersRoundRobin.v
-Model Technology ModelSim SE-64 vlog 10.2 Compiler 2013.02 Feb  2 2013
+Model Technology ModelSim SE vlog 10.2 Compiler 2013.02 Feb  2 2013
 -- Compiling module mkRouterInputArbitersRoundRobin
 
 Top level modules:
 	mkRouterInputArbitersRoundRobin
 
+} {} {}} C:/Modelsim_projects/Dronin/Verilog/network/NoC_implementation/input_queue_fifo.v {1 {vlog -work work -vopt C:/Modelsim_projects/Dronin/Verilog/network/NoC_implementation/input_queue_fifo.v
+Model Technology ModelSim SE vlog 10.2 Compiler 2013.02 Feb  2 2013
+-- Compiling module input_queue_fifo
+
+Top level modules:
+	input_queue_fifo
+
 } {} {}} C:/Modelsim_projects/Dronin/Verilog/network/NoC_implementation/multsplat11.v {1 {vlog -work work -vopt C:/Modelsim_projects/Dronin/Verilog/network/NoC_implementation/multsplat11.v
-Model Technology ModelSim SE-64 vlog 10.2 Compiler 2013.02 Feb  2 2013
+Model Technology ModelSim SE vlog 10.2 Compiler 2013.02 Feb  2 2013
 -- Compiling module multsplat11_altfp_mult_njj
 -- Compiling module multsplat11
 

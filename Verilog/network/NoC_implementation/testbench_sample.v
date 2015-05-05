@@ -60,7 +60,7 @@ module CONNECT_testbench_sample();
   localparam test_cycles = 50;
 
   //VC counters each of 4 bits for each virtual channel
-  reg [3:0] counter [0:1]; 
+  //reg [3:0] counter [0:1]; 
 
   reg Clk;
   reg Rst_n;
@@ -80,24 +80,53 @@ module CONNECT_testbench_sample();
   reg [31:0] cycle;
   integer i,j;
   //integer j;
-
-  // packet fields
-  reg is_valid;
-  reg is_tail;
-  reg [dest_bits-1:0] dest;
-  reg [vc_bits-1:0]   vc;
-  reg [`FLIT_DATA_WIDTH-1:0] data;
-
+  
   // Generate Clock
   initial Clk = 0;
   always #(HalfClkPeriod) Clk = ~Clk;
+  
+  // Matrix A
+  reg [63:0] A[4:0][4:0];
+  
+  wire [63:0] node_out[24:0];
+  wire [63:0] dummy;
 
   // Run simulation 
   initial begin 
     cycle = 0;
     Rst_n = 0;
     #(3*ClkPeriod);
-    Rst_n = 1;
+    
+	A[0][0] = $realtobits(5.0);
+	A[0][1] = $realtobits(3.0);
+	A[0][2] = $realtobits(6.0);
+	A[0][3] = $realtobits(8.0);
+	A[0][4] = $realtobits(2.0);
+	A[1][0] = $realtobits(5.0);
+	A[1][1] = $realtobits(9.0);
+	A[1][2] = $realtobits(12.0);
+	A[1][3] = $realtobits(1.0);
+	A[1][4] = $realtobits(5.0);
+	A[2][0] = $realtobits(6.0);
+	A[2][1] = $realtobits(8.0);
+	A[2][2] = $realtobits(3.0);
+	A[2][3] = $realtobits(5.0);
+	A[2][4] = $realtobits(2.0);
+	A[3][0] = $realtobits(5.0);
+	A[3][1] = $realtobits(2.0);
+	A[3][2] = $realtobits(5.0);
+	A[3][3] = $realtobits(8.0);
+	A[3][4] = $realtobits(2.0);
+	A[4][0] = $realtobits(5.0);
+	A[4][1] = $realtobits(1.0);
+	A[4][2] = $realtobits(1.0);
+	A[4][3] = $realtobits(1.0);
+	A[4][4] = $realtobits(2.0);
+	
+	
+#(ClkPeriod);
+   Rst_n = 1;
+        
   /*  for(i = 0; i < `NUM_USER_SEND_PORTS; i = i + 1) begin flit_in_wire[i] = 0; send_flit_wire[i] = 0; end
     for(i = 0; i < `NUM_USER_RECV_PORTS; i = i + 1) begin credit_in_wire[i] = 0; send_credit_wire[i] = 0; end
     for(i = 0; i < `NUM_VCS; i = i +1) begin counter[i] = `FLIT_BUFFER_DEPTH; end
@@ -144,18 +173,15 @@ module CONNECT_testbench_sample();
   end
 
 */
+
+
 end
   // Monitor arriving flits
   always @ (posedge Clk) begin
     cycle <= cycle + 1;
     for(i = 0; i < `NUM_USER_RECV_PORTS; i = i + 1) begin
       if(flit_out_wire[i][flit_port_width-1]) begin // valid flit
-<<<<<<< HEAD
         $display("@%3d: Ejecting flit %b at receive port %d", cycle, flit_out_wire[i], i);//, nodes[i]);
-=======
-
-        $display("@%3d: Ejecting flit %x at receive port %0d", cycle, flit_out_wire[i], i);//, nodes[i]);
->>>>>>> 8e3a23948499117268378fa8b11e7f4d3a1c0a3c
       end
     end
 
@@ -188,17 +214,11 @@ end
 
       for(g=0; g<25; g=g+1) begin
         
-<<<<<<< HEAD
         node_module Nodes(.N_clk(Clk), .N_rst(Rst_n), .if_i_flit(flit_out_wire[g]),
                     .if_i_credit(credit_out_wire[g]), .if_o_credit_valid(send_credit_wire[g]),
                     .if_o_credit(credit_in_wire[g]), .if_o_data(flit_in_wire[g]), 
-                    .if_o_data_valid(send_flit_wire[g]), .Node_id(g));
-=======
-        node_module Nodes(.N_clk(Clk), .N_rst(Rst_n), .Node_i_flit(flit_out_wire[g]),
-                    .Node_i_credit(credit_out_wire[g]), .Node_o_credit_valid(send_credit_wire[g]),
-                    .Node_o_credit(credit_in_wire[g]), .Node_o_data(flit_in_wire[g]), 
-                    .Node_o_data_valid(send_flit_wire[g]), .Node_id(g));
->>>>>>> 8e3a23948499117268378fa8b11e7f4d3a1c0a3c
+                    .if_o_data_valid(send_flit_wire[g]), .Node_id(g),
+                    .a_in(A[g/5][g%5] ), .a_out(node_out[g]), .dummy(dummy));
       end
 
   endgenerate
