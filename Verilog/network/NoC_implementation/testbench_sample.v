@@ -95,6 +95,9 @@ module CONNECT_testbench_sample();
   // Run simulation 
   initial begin 
     cycle = 0;
+    Rst_n = 0;
+    #(3*ClkPeriod);
+    Rst_n = 1;
   /*  for(i = 0; i < `NUM_USER_SEND_PORTS; i = i + 1) begin flit_in_wire[i] = 0; send_flit_wire[i] = 0; end
     for(i = 0; i < `NUM_USER_RECV_PORTS; i = i + 1) begin credit_in_wire[i] = 0; send_credit_wire[i] = 0; end
     for(i = 0; i < `NUM_VCS; i = i +1) begin counter[i] = `FLIT_BUFFER_DEPTH; end
@@ -164,12 +167,17 @@ end
   // Instantiate CONNECT network
   
   //Here is the instantialtion of the 25 Nodes. Use a generate block to instantiate 
-  //the 25 nodes dynamically
+  //the 25 nodes dynamically. The nodes start at 1 (pre-testing phase)
 
-  node_module Node_1(.N_clk(Clk), .N_rst(Rst_n), .Node_i_flit(flit_out_wire[0]),
+  node_module Node_0(.N_clk(Clk), .N_rst(Rst_n), .Node_i_flit(flit_out_wire[0]),
               .Node_i_credit(credit_out_wire[0]), .Node_o_credit_valid(send_credit_wire[0]),
               .Node_o_credit(credit_in_wire[0]), .Node_o_data(flit_in_wire[0]), 
-              .Node_o_data_valid(send_flit_wire[0]));
+              .Node_o_data_valid(send_flit_wire[0]), .Node_id(0));
+
+  node_module Node_7(.N_clk(Clk), .N_rst(Rst_n), .Node_i_flit(flit_out_wire[7]),
+              .Node_i_credit(credit_out_wire[7]), .Node_o_credit_valid(send_credit_wire[7]),
+              .Node_o_credit(credit_in_wire[7]), .Node_o_data(flit_in_wire[7]), 
+              .Node_o_data_valid(send_flit_wire[7]), .Node_id(7));
  /*generate 
 
     genvar g;
@@ -182,22 +190,8 @@ end
                           .in_credit(credit_out_wire[g]));//, .node_number(g));
       end
 
-  endgenerate
- /* 
-  m_if_2_router_v3 if_router(.clk(Clk),.rst_n(Rst_n),
-    //general sending interface for master pe and mig_office
-    //signals between PE and IF
-    .i_comm_send_req(in_comm_send_request), .o_comm_send_ack(out_comm_send_ack), 
-    .i_data_valid(input_data_valid), .i_data(input_data), .i_src(source), 
-    .i_dst(destination), .i_seq_len(sequence_length), .i_id(id),
-    .i_ack_rx(i_ack), .o_req_rx(o_req),
-    .o_data_input(data_to_be_sent),
-    .o_data_input_valid(data_to_be_sent_valid),
-    //signals Between IF and ROUTER
-    .i_credit(in_credit), .o_credit_valid(out_credit_valid), .o_credit(out_credit),
-    .o_data(output_data), .o_data_valid(output_data_valid), .i_flit(flit),
-    //Tag
-    .local_id(N_local_id));*/
+  endgenerate*/
+
   
   mkNetwork dut
   (.CLK(Clk)

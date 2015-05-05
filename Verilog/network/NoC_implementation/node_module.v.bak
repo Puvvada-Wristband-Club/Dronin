@@ -5,17 +5,13 @@ node. The PE(s) and IF module(s) are located here.
 
 module node_module(N_clk, N_rst, Node_i_flit, 
 					Node_i_credit, Node_o_credit_valid,
-					Node_o_credit, Node_o_data, Node_o_data_valid);
+					Node_o_credit, Node_o_data, Node_o_data_valid, Node_id);
 	
-	  // non-VC routers still reeserve 1 dummy bit for VC.
-  localparam vc_bits = (`NUM_VCS > 1) ? $clog2(`NUM_VCS) : 1;
-  localparam dest_bits = $clog2(`NUM_USER_RECV_PORTS);
-  localparam flit_port_width = 2 /*valid and tail bits*/+ `FLIT_DATA_WIDTH + dest_bits + vc_bits;
-  localparam credit_port_width = 1 + vc_bits; // 1 valid bit
+
 
 	input wire N_clk, N_rst;
-	wire [7:0] Node_local_id;
 	input wire [72:0] Node_i_flit;
+	input wire [7:0] Node_id;
 
 	output wire [2:0] Node_i_credit;
 	output wire Node_o_credit_valid;
@@ -27,18 +23,54 @@ module node_module(N_clk, N_rst, Node_i_flit,
 	reg [31:0] test_value_B = 32'b01000000100000000000000000000000;
 	reg [31:0] test_value_C = 32'b00111111100100000000000000000000;
 
-	wire Node_o_data_input_valid;
+	wire Node_o_data_input_valid, Node_o_comm_send_ack, Node_o_req_rx;
 	wire [31:0] PE_mult_result, PE_add_result, PE_to_IF_i_data;
 	wire [63:0] Node_o_data_input;
 
-	reg PE_add, Node_i_comm_send_req, Node_o_comm_send_ack, Node_i_data_valid,
-		Node_i_ack_rx, Node_o_req_rx;
+	reg PE_add, Node_i_comm_send_req, Node_i_data_valid,
+		Node_i_ack_rx;
 	reg [7:0] Node_i_src, Node_i_dst;
+	reg [7:0] Node_local_id;
 	reg [5:0] Node_i_seq_len, Node_i_id;
 
 	//This selects between the add or multiplication PE result for the PE to IF data 
 	//wire: 1 sends the add result and 0 sends the mult result
 	assign PE_to_IF_i_data = PE_add ? PE_add_result : PE_mult_result; 
+
+	always @ (posedge N_clk) begin
+		if(N_rst == 0)
+			begin
+				
+				Node_local_id <= Node_id;
+		end
+
+		else begin
+
+			// send a 2-flit packet from send port 0 to receive port 1
+		    Node_i_data_valid <= 1'b1;
+		    Node_i_dst <= 8'd7;
+		    Node_i_src <= 8'd0;
+		    //vc = 0;
+		    PE_add <=0;
+		    //data = 'ha;
+		    if(Node_local_id == 8'd7)
+		    	begin
+		    		Node_i_comm_send_req <= 1;
+		 			$("Node send data is %b", PE_mult_result);
+		    end
+
+		    if((Node_local_id == 8'd0) && Node_i_flit[72])
+		    	begin
+		    		$display("The receive data is: %b", Node_i_flit[31:0]);
+       		  		//$display("@%3d: Ejecting flit %x at receive port %0d", cycle, flit_out_wire[i], i);//, nodes[i]);
+      		end
+
+		end
+	end
+
+	always @ (Node_local_id) begin
+		$display("Node local id is: %d", Node_local_id);
+	end
 
 	 m_if_2_router_v3 IF_Router(
 		.clk(N_clk), .rst_n(N_rst),

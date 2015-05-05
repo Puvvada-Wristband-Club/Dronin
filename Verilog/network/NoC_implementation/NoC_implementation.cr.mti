@@ -33,6 +33,13 @@ Model Technology ModelSim SE-64 vlog 10.2 Compiler 2013.02 Feb  2 2013
 Top level modules:
 	mkOutputArbiter
 
+} {} {}} C:/Modelsim_projects/Dronin/Verilog/network/NoC_implementation/node_module.v {1 {vlog -work work -vopt C:/Modelsim_projects/Dronin/Verilog/network/NoC_implementation/node_module.v
+Model Technology ModelSim SE-64 vlog 10.2 Compiler 2013.02 Feb  2 2013
+-- Compiling module node_module
+
+Top level modules:
+	node_module
+
 } {} {}} C:/Modelsim_projects/Dronin/Verilog/network/NoC_implementation/subsplat14.v {1 {vlog -work work -vopt C:/Modelsim_projects/Dronin/Verilog/network/NoC_implementation/subsplat14.v
 Model Technology ModelSim SE-64 vlog 10.2 Compiler 2013.02 Feb  2 2013
 -- Compiling module subsplat14_altbarrel_shift_s4e
