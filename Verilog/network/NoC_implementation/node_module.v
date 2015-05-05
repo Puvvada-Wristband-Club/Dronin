@@ -58,7 +58,7 @@ module node_module(N_clk, N_rst, Node_i_flit,
 			//$display("The outgoing flit is: %x", Node_o_data);
 			// send a 2-flit packet from send port 0 to receive port 1
 		    Node_i_data_valid <= 1'b1;
-		    Node_i_dst <= 8'd1;
+		    Node_i_dst <= 8'd4;
 		    Node_i_src <= 8'd7;
 		    vc = 0;
 		    PE_add <=0;
@@ -84,7 +84,7 @@ module node_module(N_clk, N_rst, Node_i_flit,
 		 		end
 		    end
 
-		    if((Node_local_id == 8'd0) && (Node_i_flit[72] == 1))
+		    if((Node_local_id == 8'd7) && (Node_i_flit[72] == 1))
 		    	begin
 		    		//$display("Node%d receive data is: %b", Node_local_id, Node_i_flit[31:0]);
        		  		//$display("@%3d: Ejecting flit %x at receive port %0d", cycle, flit_out_wire[i], i);//, nodes[i]);

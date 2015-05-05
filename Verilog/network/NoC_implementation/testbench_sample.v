@@ -169,28 +169,28 @@ end
   //Here is the instantialtion of the 25 Nodes. Use a generate block to instantiate 
   //the 25 nodes dynamically. The nodes start at 1 (pre-testing phase)
 
-  node_module Node_0(.N_clk(Clk), .N_rst(Rst_n), .Node_i_flit(flit_out_wire[0]),
-              .Node_i_credit(credit_out_wire[0]), .Node_o_credit_valid(send_credit_wire[0]),
-              .Node_o_credit(credit_in_wire[0]), .Node_o_data(flit_in_wire[0]), 
-              .Node_o_data_valid(send_flit_wire[0]), .Node_id(0));
+  /*node_module Node_4(.N_clk(Clk), .N_rst(Rst_n), .Node_i_flit(flit_out_wire[4]),
+              .Node_i_credit(credit_out_wire[4]), .Node_o_credit_valid(send_credit_wire[4]),
+              .Node_o_credit(credit_in_wire[4]), .Node_o_data(flit_in_wire[4]), 
+              .Node_o_data_valid(send_flit_wire[4]), .Node_id(4));
 
   node_module Node_7(.N_clk(Clk), .N_rst(Rst_n), .Node_i_flit(flit_out_wire[7]),
               .Node_i_credit(credit_out_wire[7]), .Node_o_credit_valid(send_credit_wire[7]),
               .Node_o_credit(credit_in_wire[7]), .Node_o_data(flit_in_wire[7]), 
-              .Node_o_data_valid(send_flit_wire[7]), .Node_id(7));
- /*generate 
+              .Node_o_data_valid(send_flit_wire[7]), .Node_id(7));*/
+ generate 
 
     genvar g;
 
       for(g=0; g<25; g=g+1) begin
         
-        node Nodes (.N_clk(Clk), .N_rst_n(Rst_n), .input_flit(flit_out_wire[g]), 
-                          .output_data(flit_in_wire[g]), .output_data_valid(send_flit_wire[g]),
-        		              .out_credit(credit_in_wire[g]), .out_credit_valid(send_credit_wire[g]), 
-                          .in_credit(credit_out_wire[g]));//, .node_number(g));
+        node_module Nodes(.N_clk(Clk), .N_rst(Rst_n), .Node_i_flit(flit_out_wire[g]),
+                    .Node_i_credit(credit_out_wire[g]), .Node_o_credit_valid(send_credit_wire[g]),
+                    .Node_o_credit(credit_in_wire[g]), .Node_o_data(flit_in_wire[g]), 
+                    .Node_o_data_valid(send_flit_wire[g]), .Node_id(g));
       end
 
-  endgenerate*/
+  endgenerate
 
   
   mkNetwork dut
