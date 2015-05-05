@@ -3,17 +3,19 @@ This is the NODE module for our network that handles the computations for each
 node. The PE(s) and IF module(s) are located here.
 */
 
-module Node_module(N_clk, N_rst, Node_local_id, Node_i_flit, 
+module node_module(N_clk, N_rst, Node_i_flit, 
 					Node_i_credit, Node_o_credit_valid,
 					Node_o_credit, Node_o_data, Node_o_data_valid);
+	
+	  // non-VC routers still reeserve 1 dummy bit for VC.
+  localparam vc_bits = (`NUM_VCS > 1) ? $clog2(`NUM_VCS) : 1;
+  localparam dest_bits = $clog2(`NUM_USER_RECV_PORTS);
+  localparam flit_port_width = 2 /*valid and tail bits*/+ `FLIT_DATA_WIDTH + dest_bits + vc_bits;
+  localparam credit_port_width = 1 + vc_bits; // 1 valid bit
 
-	input wire N_clk, N_rst, Node_o_data_input_valid;
-	input wire [7:0] Node_local_id;
-	input wire [63:0] Node_o_data_input;
+	input wire N_clk, N_rst;
+	wire [7:0] Node_local_id;
 	input wire [72:0] Node_i_flit;
-	input wire [31:0] PE_mult_result;
-
-	input wire [31:0] PE_add_result;
 
 	output wire [2:0] Node_i_credit;
 	output wire Node_o_credit_valid;
@@ -21,11 +23,13 @@ module Node_module(N_clk, N_rst, Node_local_id, Node_i_flit,
 	output wire [72:0] Node_o_data;
 	output wire Node_o_data_valid;
 	
-	output reg [31:0] test_value_A = 32'b01000000001000000000000000000000; 
-	output reg [31:0] test_value_B = 32'b01000000100000000000000000000000;
-	output reg [31:0] test_value_C = 32'b00111111100100000000000000000000;
+	reg [31:0] test_value_A = 32'b01000000001000000000000000000000; 
+	reg [31:0] test_value_B = 32'b01000000100000000000000000000000;
+	reg [31:0] test_value_C = 32'b00111111100100000000000000000000;
 
-	wire [31:0] PE_to_IF_i_data;
+	wire Node_o_data_input_valid;
+	wire [31:0] PE_mult_result, PE_add_result, PE_to_IF_i_data;
+	wire [63:0] Node_o_data_input;
 
 	reg PE_add, Node_i_comm_send_req, Node_o_comm_send_ack, Node_i_data_valid,
 		Node_i_ack_rx, Node_o_req_rx;

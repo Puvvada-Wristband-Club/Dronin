@@ -6,6 +6,8 @@ node. The PE(s) and IF module(s) are located here.
 module node_module(N_clk, N_rst, Node_i_flit, 
 					Node_i_credit, Node_o_credit_valid,
 					Node_o_credit, Node_o_data, Node_o_data_valid);
+	
+
 
 	input wire N_clk, N_rst;
 	wire [7:0] Node_local_id;
@@ -21,14 +23,12 @@ module node_module(N_clk, N_rst, Node_i_flit,
 	reg [31:0] test_value_B = 32'b01000000100000000000000000000000;
 	reg [31:0] test_value_C = 32'b00111111100100000000000000000000;
 
-	
-
-	wire Node_o_data_input_valid;
+	wire Node_o_data_input_valid, Node_o_comm_send_ack, Node_o_req_rx;
 	wire [31:0] PE_mult_result, PE_add_result, PE_to_IF_i_data;
 	wire [63:0] Node_o_data_input;
 
-	reg PE_add, Node_i_comm_send_req, Node_o_comm_send_ack, Node_i_data_valid,
-		Node_i_ack_rx, Node_o_req_rx;
+	reg PE_add, Node_i_comm_send_req, Node_i_data_valid,
+		Node_i_ack_rx;
 	reg [7:0] Node_i_src, Node_i_dst;
 	reg [5:0] Node_i_seq_len, Node_i_id;
 
