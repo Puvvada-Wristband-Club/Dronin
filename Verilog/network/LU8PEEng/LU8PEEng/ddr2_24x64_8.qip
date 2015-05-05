@@ -1,0 +1,11 @@
+set_global_assignment -name IP_TOOL_NAME "DDR2 High Performance Controller"
+set_global_assignment -name IP_TOOL_VERSION "8.0"
+set_global_assignment -name VERILOG_FILE [file join $::quartus(qip_path) "ddr2_24x64_8_auk_ddr_hp_controller_wrapper.v"]
+set_global_assignment -name VHDL_FILE [file join $::quartus(qip_path) "auk_ddr_hp_controller.vhd"]
+set_global_assignment -name SEARCH_PATH  /autofs/jayar/b/b3/tools/altera/quartus/quartus8.0/linux/ip/ddr2_high_perf/lib
+set_global_assignment -name MISC_FILE [file join $::quartus(qip_path) ddr2_24x64_8.v ]
+set_global_assignment -name MISC_FILE [file join $::quartus(qip_path) ddr2_24x64_8_bb.v ]
+set_global_assignment -name MISC_FILE [file join $::quartus(qip_path) ddr2_24x64_8.qip ]
+set_global_assignment -name MISC_FILE [file join $::quartus(qip_path) ddr2_24x64_8.html ]
+set_global_assignment -name IPA_FILE ddr2_24x64_8_advisor.ipa
+set_global_assignment -name IPA_FILE ddr2_24x64_8_advisor.ipa

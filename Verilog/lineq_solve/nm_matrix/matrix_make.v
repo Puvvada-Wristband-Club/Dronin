@@ -7,23 +7,23 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module matrix_make(reset, clk, make, m1_dim, n1_dim, matrix1_in, matrix_out);
+module matrix_make(reset, clk, make, m_dim, n_dim, matrix_in, read, m_addr, n_addr, data_out);
 
  // global inputs
-input         reset, clk;
-input         make;
-input [7:0]   m1_dim, n1_dim;
-input [128*128*32-1:0]  matrix1_in;
-// global outputs
-output [128*128*32-1:0]    matrix_out;
+input           reset, clk;
+input           make, read;
+input [7:0]     m_dim, n_dim;
+input [7:0]     m_addr, n_addr;
+input [128*128*32-1:0]  matrix_in;
+ //global outputs
+output [31:0]   data_out;
 
  // constructor inputs
 reg   start;
  // matrix inputs
-reg   write, read;
+reg   write;
 reg   transpose;
-reg [7:0]   m_addr, n_addr;
-reg [31:0]  data_in;
+reg [31:0]      data_in;
 	
  // constructor outputs
 wire        _write, construct_done;
@@ -37,7 +37,6 @@ wire [31:0] data_out;
 reg [1:0]               state;
 reg [128*128*32-1:0]    matrix_out;
 
-reg          construct_lag; //timing hack
 reg [15:0]   counter;
 
  // loop integers
@@ -53,11 +52,10 @@ matrix_construct constructor(
  .reset(reset),
  .clk(clk),
  .start(start),
- .m_dim(m1_dim),
- .n_dim(n1_dim),
- .matrix_in(matrix1_in),
+ .m_dim(m_dim),
+ .n_dim(n_dim),
+ .matrix_in(matrix_in),
  .write(_write),
- .construct_done(construct_done),
  .m_addr(_m_addr),
  .n_addr(_n_addr),
  .matrix_entry(matrix_entry),
@@ -65,13 +63,13 @@ matrix_construct constructor(
  .q_Construct(q_Construct)
  );
  
-mn_matrix matrix1(
+mn_matrix matrix(
 .reset(reset),
 .clk(clk),
 .write(write),
-.read(read1),
-.m_dim(m1_dim),
-.n_dim(n1_dim),
+.read(read),
+.m_dim(m_dim),
+.n_dim(n_dim),
 .m_addr(m_addr),
 .n_addr(n_addr),
 .transpose(transpose),
@@ -95,12 +93,11 @@ always @(posedge clk, posedge reset) //asynchronous active_high Reset
             begin
                 start <= 1;
                 counter <= counter + 1;
-                //construct_lag <= construct_done;
                 
                 if (start == 1)
                     start <= 0;
                 
-                if (counter < m1_dim*n1_dim*2)
+                if (counter < m_dim*n_dim*2)
                   begin
                       m_addr <= _m_addr;
                       n_addr <= _n_addr;

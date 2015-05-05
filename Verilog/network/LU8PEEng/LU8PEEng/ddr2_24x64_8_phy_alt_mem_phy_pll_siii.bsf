@@ -1,0 +1,190 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+/*
+Copyright (C) 1991-2008 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+*/
+(header "symbol" (version "1.1"))
+(symbol
+	(rect 0 0 400 240)
+	(text "ddr2_24x64_8_phy_alt_mem_phy_pll_siii" (rect 85 0 346 12)(font "Arial" (font_size 10)))
+	(text "inst" (rect 8 224 36 236)(font "Arial" ))
+	(port
+		(pt 0 64)
+		(input)
+		(text "inclk0" (rect 0 0 42 12)(font "Arial" (font_size 8)))
+		(text "inclk0" (rect 4 51 30 64)(font "Arial" (font_size 8)))
+		(line (pt 0 64)(pt 112 64)(line_width 1))
+	)
+	(port
+		(pt 0 80)
+		(input)
+		(text "areset" (rect 0 0 42 12)(font "Arial" (font_size 8)))
+		(text "areset" (rect 4 67 32 80)(font "Arial" (font_size 8)))
+		(line (pt 0 80)(pt 112 80)(line_width 1))
+	)
+	(port
+		(pt 0 96)
+		(input)
+		(text "phasecounterselect[3..0]" (rect 0 0 169 12)(font "Arial" (font_size 8)))
+		(text "phasecounterselect[3..0]" (rect 4 83 116 96)(font "Arial" (font_size 8)))
+		(line (pt 0 96)(pt 112 96)(line_width 3))
+	)
+	(port
+		(pt 0 112)
+		(input)
+		(text "phaseupdown" (rect 0 0 77 12)(font "Arial" (font_size 8)))
+		(text "phaseupdown" (rect 4 99 68 112)(font "Arial" (font_size 8)))
+		(line (pt 0 112)(pt 112 112)(line_width 1))
+	)
+	(port
+		(pt 0 128)
+		(input)
+		(text "phasestep" (rect 0 0 63 12)(font "Arial" (font_size 8)))
+		(text "phasestep" (rect 4 115 51 128)(font "Arial" (font_size 8)))
+		(line (pt 0 128)(pt 112 128)(line_width 1))
+	)
+	(port
+		(pt 0 144)
+		(input)
+		(text "scanclk" (rect 0 0 49 12)(font "Arial" (font_size 8)))
+		(text "scanclk" (rect 4 131 37 144)(font "Arial" (font_size 8)))
+		(line (pt 0 144)(pt 112 144)(line_width 1))
+	)
+	(port
+		(pt 400 64)
+		(output)
+		(text "c0" (rect 0 0 14 12)(font "Arial" (font_size 8)))
+		(text "c0" (rect 386 51 397 64)(font "Arial" (font_size 8)))
+		(line (pt 400 64)(pt 336 64)(line_width 1))
+	)
+	(port
+		(pt 400 80)
+		(output)
+		(text "c1" (rect 0 0 14 12)(font "Arial" (font_size 8)))
+		(text "c1" (rect 386 67 397 80)(font "Arial" (font_size 8)))
+		(line (pt 400 80)(pt 336 80)(line_width 1))
+	)
+	(port
+		(pt 400 96)
+		(output)
+		(text "c2" (rect 0 0 14 12)(font "Arial" (font_size 8)))
+		(text "c2" (rect 386 83 397 96)(font "Arial" (font_size 8)))
+		(line (pt 400 96)(pt 336 96)(line_width 1))
+	)
+	(port
+		(pt 400 112)
+		(output)
+		(text "c3" (rect 0 0 14 12)(font "Arial" (font_size 8)))
+		(text "c3" (rect 386 99 397 112)(font "Arial" (font_size 8)))
+		(line (pt 400 112)(pt 336 112)(line_width 1))
+	)
+	(port
+		(pt 400 128)
+		(output)
+		(text "c4" (rect 0 0 14 12)(font "Arial" (font_size 8)))
+		(text "c4" (rect 386 115 397 128)(font "Arial" (font_size 8)))
+		(line (pt 400 128)(pt 336 128)(line_width 1))
+	)
+	(port
+		(pt 400 144)
+		(output)
+		(text "c5" (rect 0 0 14 12)(font "Arial" (font_size 8)))
+		(text "c5" (rect 386 131 397 144)(font "Arial" (font_size 8)))
+		(line (pt 400 144)(pt 336 144)(line_width 1))
+	)
+	(port
+		(pt 400 160)
+		(output)
+		(text "c6" (rect 0 0 14 12)(font "Arial" (font_size 8)))
+		(text "c6" (rect 386 147 397 160)(font "Arial" (font_size 8)))
+		(line (pt 400 160)(pt 336 160)(line_width 1))
+	)
+	(port
+		(pt 400 176)
+		(output)
+		(text "phasedone" (rect 0 0 63 12)(font "Arial" (font_size 8)))
+		(text "phasedone" (rect 347 163 397 176)(font "Arial" (font_size 8)))
+		(line (pt 400 176)(pt 336 176)(line_width 1))
+	)
+	(port
+		(pt 400 192)
+		(output)
+		(text "locked" (rect 0 0 42 12)(font "Arial" (font_size 8)))
+		(text "locked" (rect 368 179 397 192)(font "Arial" (font_size 8)))
+		(line (pt 400 192)(pt 336 192)(line_width 1))
+	)
+	(drawing
+		(text "Stratix III" (rect 358 227 392 238)(font "Arial" ))
+		(text "inclk0 frequency: 100.000 MHz" (rect 122 60 237 71)(font "Arial" ))
+		(text "Operation Mode: No Compensation" (rect 122 73 253 84)(font "Arial" ))
+		(text "Clk " (rect 123 94 137 105)(font "Arial" ))
+		(text "Ratio" (rect 178 94 198 105)(font "Arial" ))
+		(text "Ph (dg)" (rect 239 94 268 105)(font "Arial" ))
+		(text "DC (%)" (rect 273 94 300 105)(font "Arial" ))
+		(text "c0" (rect 126 108 135 119)(font "Arial" ))
+		(text "133333499/100000000" (rect 142 108 234 119)(font "Arial" ))
+		(text "30.00" (rect 242 108 264 119)(font "Arial" ))
+		(text "50.00" (rect 275 108 297 119)(font "Arial" ))
+		(text "c1" (rect 126 122 135 133)(font "Arial" ))
+		(text "266666999/100000000" (rect 142 122 234 133)(font "Arial" ))
+		(text "0.00" (rect 245 122 262 133)(font "Arial" ))
+		(text "50.00" (rect 275 122 297 133)(font "Arial" ))
+		(text "c2" (rect 126 136 135 147)(font "Arial" ))
+		(text "133333499/100000000" (rect 142 136 234 147)(font "Arial" ))
+		(text "0.00" (rect 245 136 262 147)(font "Arial" ))
+		(text "50.00" (rect 275 136 297 147)(font "Arial" ))
+		(text "c3" (rect 126 150 135 161)(font "Arial" ))
+		(text "266666999/100000000" (rect 142 150 234 161)(font "Arial" ))
+		(text "-90.00" (rect 239 150 267 161)(font "Arial" ))
+		(text "50.00" (rect 275 150 297 161)(font "Arial" ))
+		(text "c4" (rect 126 164 135 175)(font "Arial" ))
+		(text "266666999/100000000" (rect 142 164 234 175)(font "Arial" ))
+		(text "0.00" (rect 245 164 262 175)(font "Arial" ))
+		(text "50.00" (rect 275 164 297 175)(font "Arial" ))
+		(text "c5" (rect 126 178 135 189)(font "Arial" ))
+		(text "133333499/100000000" (rect 142 178 234 189)(font "Arial" ))
+		(text "0.00" (rect 245 178 262 189)(font "Arial" ))
+		(text "50.00" (rect 275 178 297 189)(font "Arial" ))
+		(text "c6" (rect 126 192 135 203)(font "Arial" ))
+		(text "133333499/100000000" (rect 142 192 234 203)(font "Arial" ))
+		(text "270.00" (rect 240 192 267 203)(font "Arial" ))
+		(text "50.00" (rect 275 192 297 203)(font "Arial" ))
+		(line (pt 0 0)(pt 401 0)(line_width 1))
+		(line (pt 401 0)(pt 401 241)(line_width 1))
+		(line (pt 0 241)(pt 401 241)(line_width 1))
+		(line (pt 0 0)(pt 0 241)(line_width 1))
+		(line (pt 120 92)(pt 302 92)(line_width 1))
+		(line (pt 120 105)(pt 302 105)(line_width 1))
+		(line (pt 120 119)(pt 302 119)(line_width 1))
+		(line (pt 120 133)(pt 302 133)(line_width 1))
+		(line (pt 120 147)(pt 302 147)(line_width 1))
+		(line (pt 120 161)(pt 302 161)(line_width 1))
+		(line (pt 120 175)(pt 302 175)(line_width 1))
+		(line (pt 120 189)(pt 302 189)(line_width 1))
+		(line (pt 120 203)(pt 302 203)(line_width 1))
+		(line (pt 120 92)(pt 120 203)(line_width 1))
+		(line (pt 139 92)(pt 139 203)(line_width 3))
+		(line (pt 236 92)(pt 236 203)(line_width 3))
+		(line (pt 270 92)(pt 270 203)(line_width 3))
+		(line (pt 301 92)(pt 301 203)(line_width 1))
+		(line (pt 112 48)(pt 336 48)(line_width 1))
+		(line (pt 336 48)(pt 336 224)(line_width 1))
+		(line (pt 112 224)(pt 336 224)(line_width 1))
+		(line (pt 112 48)(pt 112 224)(line_width 1))
+	)
+)

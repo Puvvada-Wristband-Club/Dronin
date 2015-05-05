@@ -1,0 +1,6 @@
+set_global_assignment -name IP_TOOL_NAME "ALTPLL"
+set_global_assignment -name IP_TOOL_VERSION "8.0"
+set_global_assignment -name VERILOG_FILE [file join $::quartus(qip_path) "ddr2_24x64_8_phy_alt_mem_phy_pll_siii.v"]
+set_global_assignment -name MISC_FILE [file join $::quartus(qip_path) "ddr2_24x64_8_phy_alt_mem_phy_pll_siii.bsf"]
+set_global_assignment -name MISC_FILE [file join $::quartus(qip_path) "ddr2_24x64_8_phy_alt_mem_phy_pll_siii_bb.v"]
+set_global_assignment -name MISC_FILE [file join $::quartus(qip_path) "ddr2_24x64_8_phy_alt_mem_phy_pll_siii.ppf"]

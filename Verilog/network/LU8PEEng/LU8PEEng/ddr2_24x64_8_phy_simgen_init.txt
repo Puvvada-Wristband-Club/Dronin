@@ -1,0 +1,2 @@
+DECLARE_VHDL_COMPONENT=ddr2_24x64_8_phy_alt_mem_phy_pll_siii
+DECLARE_VHDL_COMPONENT=ddr2_24x64_8_phy_alt_mem_phy_sequencer_wrapper
