@@ -150,8 +150,12 @@ end
     cycle <= cycle + 1;
     for(i = 0; i < `NUM_USER_RECV_PORTS; i = i + 1) begin
       if(flit_out_wire[i][flit_port_width-1]) begin // valid flit
+<<<<<<< HEAD
+        $display("@%3d: Ejecting flit %b at receive port %d", cycle, flit_out_wire[i], i);//, nodes[i]);
+=======
 
         $display("@%3d: Ejecting flit %x at receive port %0d", cycle, flit_out_wire[i], i);//, nodes[i]);
+>>>>>>> 8e3a23948499117268378fa8b11e7f4d3a1c0a3c
       end
     end
 
@@ -184,10 +188,17 @@ end
 
       for(g=0; g<25; g=g+1) begin
         
+<<<<<<< HEAD
+        node_module Nodes(.N_clk(Clk), .N_rst(Rst_n), .if_i_flit(flit_out_wire[g]),
+                    .if_i_credit(credit_out_wire[g]), .if_o_credit_valid(send_credit_wire[g]),
+                    .if_o_credit(credit_in_wire[g]), .if_o_data(flit_in_wire[g]), 
+                    .if_o_data_valid(send_flit_wire[g]), .Node_id(g));
+=======
         node_module Nodes(.N_clk(Clk), .N_rst(Rst_n), .Node_i_flit(flit_out_wire[g]),
                     .Node_i_credit(credit_out_wire[g]), .Node_o_credit_valid(send_credit_wire[g]),
                     .Node_o_credit(credit_in_wire[g]), .Node_o_data(flit_in_wire[g]), 
                     .Node_o_data_valid(send_flit_wire[g]), .Node_id(g));
+>>>>>>> 8e3a23948499117268378fa8b11e7f4d3a1c0a3c
       end
 
   endgenerate
