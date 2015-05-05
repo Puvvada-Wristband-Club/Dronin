@@ -20,7 +20,7 @@ reg [32*8:1] state_string;
 matrix_make dut(
  .reset(reset_tb),
  .clk(clk_tb),
- .mult(make_tb),
+ .make(make_tb),
  .m1_dim(m1_dim_tb),
  .n1_dim(n1_dim_tb),
  .matrix1_in(matrix1_in_tb),
@@ -63,7 +63,7 @@ initial
  //initialize output file
   initial
    begin
-      f = $fopen("matrix_mult_tb.txt");
+      f = $fopen("matrix_make_tb.txt");
    end
    
  //generate input stimuli
